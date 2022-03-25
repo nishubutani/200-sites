@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6d177c6-1188-49fd-8046-3b9a3bcd333b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$asphaltPlusInc.coverage" NAME="asphaltPlusInc Coverage Results" MODIFIED="1559299972389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$validate.coverage" NAME="validate Coverage Results" MODIFIED="1558418130001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$export_xml.coverage" NAME="export_xml Coverage Results" MODIFIED="1556964294495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$input88.coverage" NAME="input88 Coverage Results" MODIFIED="1550659188505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$harveysmith_spider.coverage" NAME="harveysmith_spider Coverage Results" MODIFIED="1559918873637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$lencontecomp.coverage" NAME="lencontecomp Coverage Results" MODIFIED="1559303013770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1556887883675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$butlerhomebuilders.coverage" NAME="butlerhomebuilders Coverage Results" MODIFIED="1559916996348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$delete.coverage" NAME="delete Coverage Results" MODIFIED="1559302937707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$rhinetta.coverage" NAME="rhinetta Coverage Results" MODIFIED="1560347238046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$mashburnhomebuilder.coverage" NAME="mashburnhomebuilder Coverage Results" MODIFIED="1559303389331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$ftpUpload.coverage" NAME="ftpUpload Coverage Results" MODIFIED="1559720282669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1559916638153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$crowcreek_homes_spider.coverage" NAME="crowcreek_homes_spider Coverage Results" MODIFIED="1559918428075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$validate__1_.coverage" NAME="validate (1) Coverage Results" MODIFIED="1550743488511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$asphaltPlusInc.coverage" NAME="asphaltPlusInc Coverage Results" MODIFIED="1556888511493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$infinityhomesmtSpider.coverage" NAME="infinityhomesmtSpider Coverage Results" MODIFIED="1559297803631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$rhinetta.coverage" NAME="rhinetta Coverage Results" MODIFIED="1558591108051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$pyKibana.coverage" NAME="pyKibana Coverage Results" MODIFIED="1560236137363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1558703608563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$progressstreet_1st_june.coverage" NAME="progressstreet_1st_june Coverage Results" MODIFIED="1559919144138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$mashburnhomebuilder.coverage" NAME="mashburnhomebuilder Coverage Results" MODIFIED="1559721006639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$whitebuildersinc_1st_june.coverage" NAME="whitebuildersinc_1st_june Coverage Results" MODIFIED="1560493078269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_Daily_Code$EmbuilderExtractor.coverage" NAME="EmbuilderExtractor Coverage Results" MODIFIED="1559918532991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling_New_Update$rhinetta.coverage" NAME="rhinetta Coverage Results" MODIFIED="1559303520217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$c_rock_spider.coverage" NAME="c_rock_spider Coverage Results" MODIFIED="1556888630900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+    <SUITE FILE_PATH="coverage/BDX_Crawling$infinityhomesmtSpider.coverage" NAME="infinityhomesmtSpider Coverage Results" MODIFIED="1557899086511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BDX_Crawling/spiders" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lVNJlLroAoL4ttGRPIH8qJZUgg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Deep\Main BDX Project\For Daily\BDX_Crawling Daily Code\BDX_Crawling" />
+      <recent name="F:\Deep\Main BDX Project\For Devlopers\BDX_Crawling New Update\BDX_Crawling\spiders" />
+      <recent name="F:\Deep\My Task\Running\Full\BDX_Crawling\BDX_Crawling\input\Dara" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\.PyCharm2018.3\config\extensions" />
+      <recent name="F:\Deep\Main BDX Project\For Devlopers\BDX_Crawling New Update\BDX_Crawling\spiders" />
+      <recent name="F:\Deep\My Task\Running\Full\BDX_Crawling\BDX_Crawling\spiders\xml" />
+      <recent name="F:\Deep\My Task\Running\Full\BDX_Crawling\BDX_Crawling" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.asphaltPlusInc">
+    <configuration name="asphaltPlusInc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BDX_Crawling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BDX_Crawling/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BDX_Crawling/spiders/asphaltPlusInc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="jaymarchomes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BDX_Crawling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BDX_Crawling/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BDX_Crawling/spiders/jaymarchomes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mainstreethomes_crawler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BDX_Crawling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BDX_Crawling/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BDX_Crawling/spiders/mainstreethomes_crawler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="regency_homes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BDX_Crawling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BDX_Crawling/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BDX_Crawling/spiders/regency_homes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rhinetta" type="PythonConfigurationType" factoryName="Python">
+      <module name="BDX_Crawling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BDX_Crawling/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BDX_Crawling/spiders/rhinetta.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="silverstonebuildingomaha" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BDX_Crawling" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BDX_Crawling/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BDX_Crawling/spiders/silverstonebuildingomaha.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.rhinetta" />
+      <item itemvalue="Python.jaymarchomes" />
+      <item itemvalue="Python.mainstreethomes_crawler" />
+      <item itemvalue="Python.regency_homes" />
+      <item itemvalue="Python.silverstonebuildingomaha" />
+      <item itemvalue="Python.asphaltPlusInc" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.asphaltPlusInc" />
+        <item itemvalue="Python.mainstreethomes_crawler" />
+        <item itemvalue="Python.regency_homes" />
+        <item itemvalue="Python.silverstonebuildingomaha" />
+        <item itemvalue="Python.jaymarchomes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6d177c6-1188-49fd-8046-3b9a3bcd333b" name="Default Changelist" comment="" />
+      <created>1550121532713</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550121532713</updated>
+      <workItem from="1550121537362" duration="8544000" />
+      <workItem from="1550639965118" duration="16689000" />
+      <workItem from="1550661927257" duration="24022000" />
+      <workItem from="1550743219302" duration="1217000" />
+      <workItem from="1551167767147" duration="241000" />
+      <workItem from="1551172924363" duration="3283000" />
+      <workItem from="1551264288139" duration="7585000" />
+      <workItem from="1551954276426" duration="449000" />
+      <workItem from="1552029119572" duration="1374000" />
+      <workItem from="1552040346310" duration="1632000" />
+      <workItem from="1552307887218" duration="900000" />
+      <workItem from="1552309879948" duration="7278000" />
+      <workItem from="1552381940200" duration="10845000" />
+      <workItem from="1552396274436" duration="1992000" />
+      <workItem from="1552655626323" duration="1887000" />
+      <workItem from="1552717268501" duration="6917000" />
+      <workItem from="1552731365523" duration="15000" />
+      <workItem from="1552901692887" duration="602000" />
+      <workItem from="1553601915143" duration="615000" />
+      <workItem from="1553685522560" duration="2789000" />
+      <workItem from="1553851788358" duration="636000" />
+      <workItem from="1553861402471" duration="715000" />
+      <workItem from="1554444514577" duration="2631000" />
+      <workItem from="1556097869686" duration="6175000" />
+      <workItem from="1556168824562" duration="1731000" />
+      <workItem from="1556194040527" duration="634000" />
+      <workItem from="1556514468591" duration="12916000" />
+      <workItem from="1556541774041" duration="1200000" />
+      <workItem from="1556690783337" duration="246000" />
+      <workItem from="1556710315074" duration="1747000" />
+      <workItem from="1556884099816" duration="6101000" />
+      <workItem from="1556963957022" duration="2883000" />
+      <workItem from="1557897078581" duration="12856000" />
+      <workItem from="1558417366302" duration="2806000" />
+      <workItem from="1558530906630" duration="1593000" />
+      <workItem from="1558589695856" duration="2074000" />
+      <workItem from="1558598106475" duration="1632000" />
+      <workItem from="1558605896318" duration="677000" />
+      <workItem from="1558683874871" duration="2747000" />
+      <workItem from="1558692517212" duration="619000" />
+      <workItem from="1558693440218" duration="11166000" />
+      <workItem from="1558932417835" duration="9202000" />
+      <workItem from="1558948324282" duration="3179000" />
+      <workItem from="1558964010935" duration="9922000" />
+      <workItem from="1559037849056" duration="5816000" />
+      <workItem from="1559219387139" duration="203000" />
+      <workItem from="1559220792079" duration="2571000" />
+      <workItem from="1559296491339" duration="7840000" />
+      <workItem from="1559309341188" duration="3907000" />
+      <workItem from="1559719463490" duration="6625000" />
+      <workItem from="1559914569859" duration="5084000" />
+      <workItem from="1560147673042" duration="1107000" />
+      <workItem from="1560231178621" duration="351000" />
+      <workItem from="1560235214747" duration="10248000" />
+      <workItem from="1560261968209" duration="481000" />
+      <workItem from="1560262771218" duration="7000" />
+      <workItem from="1560347202497" duration="1014000" />
+      <workItem from="1560396526776" duration="1366000" />
+      <workItem from="1560433626937" duration="537000" />
+      <workItem from="1560490597238" duration="11940000" />
+      <workItem from="1560576401429" duration="3882000" />
+      <workItem from="1560592885593" duration="689000" />
+      <workItem from="1562044289945" duration="1378000" />
+      <workItem from="1562824971144" duration="2128000" />
+      <workItem from="1562827271794" duration="590000" />
+      <workItem from="1562830392149" duration="931000" />
+      <workItem from="1562840137391" duration="612000" />
+      <workItem from="1563536796019" duration="323000" />
+      <workItem from="1563538504071" duration="912000" />
+      <workItem from="1564724877167" duration="317000" />
+      <workItem from="1564727239183" duration="620000" />
+      <workItem from="1564729740387" duration="356000" />
+      <workItem from="1565932447293" duration="5000" />
+      <workItem from="1566449233809" duration="7000" />
+      <workItem from="1568354478867" duration="7000" />
+      <workItem from="1568805555622" duration="169000" />
+      <workItem from="1568805928452" duration="827000" />
+      <workItem from="1568806818151" duration="1111000" />
+      <workItem from="1569403493329" duration="79000" />
+      <workItem from="1569473415914" duration="754000" />
+      <workItem from="1571653283755" duration="350000" />
+      <workItem from="1572698425129" duration="35000" />
+      <workItem from="1572698630584" duration="204000" />
+      <workItem from="1572698916211" duration="149000" />
+      <workItem from="1572929120491" duration="1398000" />
+      <workItem from="1574082525931" duration="45000" />
+      <workItem from="1574166384680" duration="1769000" />
+      <workItem from="1574168209147" duration="591000" />
+      <workItem from="1574225854177" duration="32000" />
+      <workItem from="1574339148802" duration="115000" />
+      <workItem from="1574401817825" duration="396000" />
+      <workItem from="1574688378938" duration="135000" />
+      <workItem from="1575615939984" duration="709000" />
+      <workItem from="1575695548261" duration="198000" />
+      <workItem from="1576068402098" duration="982000" />
+      <workItem from="1576127317995" duration="168000" />
+      <workItem from="1576910003887" duration="1029000" />
+      <workItem from="1576934969694" duration="66000" />
+      <workItem from="1577075250112" duration="122000" />
+      <workItem from="1577080097248" duration="1297000" />
+      <workItem from="1577164511287" duration="271000" />
+      <workItem from="1577351641327" duration="78000" />
+      <workItem from="1577424063835" duration="1756000" />
+      <workItem from="1577855522070" duration="1399000" />
+      <workItem from="1577857533085" duration="402000" />
+      <workItem from="1577968502684" duration="245000" />
+      <workItem from="1578114878174" duration="843000" />
+      <workItem from="1579324601020" duration="1751000" />
+      <workItem from="1579326411864" duration="1773000" />
+      <workItem from="1579328315335" duration="1254000" />
+      <workItem from="1605079523080" duration="134000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="289454000" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/c_rock_spider.py</url>
+          <line>253</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/c_rock_spider.py</url>
+          <line>323</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/c_rock_spider.py</url>
+          <line>175</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/extensions/ftpUpload_Test.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/Abba_River_Home.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/validate.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/covingtonhomesco.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/covingtonhomesco.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/covingtonhomesco.py</url>
+          <line>148</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BDX_Crawling/spiders/byer_builders.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

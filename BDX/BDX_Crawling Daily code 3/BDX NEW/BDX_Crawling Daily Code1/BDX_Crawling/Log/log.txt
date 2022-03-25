@@ -1,0 +1,108 @@
+INFO:scrapy.utils.log:Scrapy 1.6.0 started (bot: BDX_Crawling)
+INFO:scrapy.utils.log:Versions: lxml 4.3.0.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0j  20 Nov 2018), cryptography 2.4.2, Platform Windows-10-10.0.17763-SP0
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'BDX_Crawling', 'NEWSPIDER_MODULE': 'BDX_Crawling.spiders', 'SPIDER_MODULES': ['BDX_Crawling.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 4e7b917bef06c6a2
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1007, "Can't create database 'bdx_crawling_2019_06_25'; database exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1050, "Table 'corporation_table' already exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1050, "Table 'builder_table' already exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1050, "Table 'subdivision_table' already exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1050, "Table 'plan_table' already exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1050, "Table 'spec_table' already exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1007, "Can't create database 'bdx_crawling_count'; database exists")
+  result = self._query(query)
+
+WARNING:py.warnings:C:\Users\admin\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py:170: Warning: (1050, "Table 'counttable' already exists")
+  result = self._query(query)
+
+INFO:scrapy.middleware:Enabled item pipelines:
+['BDX_Crawling.pipelines.BdxCrawlingPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6030
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://www.robincookandco.com/> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET http://www.robincookandco.com/fleminglakedevelopment> (referer: http://www.robincookandco.com/)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): www.robincookandco.com:80
+DEBUG:urllib3.connectionpool:http://www.robincookandco.com:80 "GET /gallery HTTP/1.1" 200 20675
+DEBUG:scrapy.core.scraper:Scraped from <200 http://www.robincookandco.com/fleminglakedevelopment>
+{'AreaCode': '734',
+ 'BuildOnYourLot': 0,
+ 'BuilderNumber': '425022265475564258873641203610',
+ 'City': 'Ann Arbor',
+ 'Email': '',
+ 'Extension': '',
+ 'OutOfCommunity': 1,
+ 'Prefix': '320',
+ 'State': 'MI',
+ 'Street1': '1108 Westview Way',
+ 'SubDescription': 'Fleming Lake Drive, our most recent development, is a '
+                   'prestigious Ann Arbor subdivision. We have 4 beautiful '
+                   'parcels left, ranging from 3-6 acres each. These wooded, '
+                   'private, waterfront parcels are just 5 minutes from '
+                   'downtown Ann Arbor and zoned for Ann Arbor public schools. '
+                   'We will have more media up shortly but please click on the '
+                   'contact button at the top of the page for more information '
+                   'in the meantime. We would love to discuss how we can help '
+                   'build your vision!',
+ 'SubImage': 'https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/57687a045016e17bf82a3b67/1466527526474/_tri7992EDIT.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567211e85a566877a052db1d/1469833893768/_hur5407.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/57695edb579fb3601c08ded5/1466527902891/_tri8008_edited-2.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/57696733f7e0ab4b5a0223af/1466531429754/_tri8014_edited-2.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/576960ec4402434eed550993/1466531276208/_tri8013_edited-2.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/57695fee20099e3c930b628a/1466529476390/_tri8010_edited-2.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5769685515d5db4f5e1ded92/1466532144692/_tri8021_edited-2.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/57696950f7e0ab4b5a023443/1466532449789/_tri8026_edited-2.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696bad157eb8d591d04dd14/1456265977448/X01A3135.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696bac51c121009167fe65c/1456265958046/X01A3109.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b909a2bab83b967dd615/1456265989764/dsc_0175.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b918a2bab83b967dd6ae/1456266020517/dsc_0187.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567211e59cadb60e553a5f2d/1456266045050/_hur5318.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567211e640667a634d1069aa/1456266074789/_hur5355.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567211e65a566877a052db1a/1456266103704/_hur5370_edit.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5672122c7086d73aae8617cd/1456266135777/_hur5300.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/56721303bfe8739f7af44781/1456266182150/X01A1409.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567213030ab3774b34591764/1456266199579/X01A1476.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/56721308b204d5dd9d566382/1456266225081/X01A1515.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5672130b0ab3774b3459179e/1456266249514/X01A1622.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567213430ab3774b3459198c/1456266272885/X01A1691.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/56721347b204d5dd9d56659c/1456266296375/X01A1755.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567213480ab3774b345919ae/1456266333905/X01A1790.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5672134db204d5dd9d5665cd/1456266369286/X01A1887.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5672134d0ab3774b345919d7/1456266391154/X01A1897.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5672134e0ab3774b345919ef/1456266413054/X01A1969.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/56721355b204d5dd9d56660c/1456266438980/X01A2211.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567213560ab3774b34591a21/1456254547060/X01A2400.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5672135fb204d5dd9d56665f/1456254627128/X01A2477.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/567213600ab3774b34591a74/1456254847277/X01A2663.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b8cba2bab83b967dd333/1456255665049/dsc_0111.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b8d9dc5cb456ee839f98/1456255642475/_hur5373.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b8e5dc5cb456ee83a012/1456255970688/dsc_0134.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b920a2bab83b967dd75d/1456257324770/dsc_0328.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b928a2bab83b967dd7ad/1456257448590/dsc_0329.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b98069a91ac185442f82/1456258490411/X01A1571.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b98f5a5668ede7bcb731/1456258584065/X01A1574.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b99d69a91ac185443346/1456258682819/X01A1868.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b9ab841abada213d0366/1456258778304/X01A2016.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b9b95a5668ede7bcb924/1456258890544/X01A2123.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b9c40e4c117b93da1dba/1456259012714/X01A2285.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696b9ef69a91ac1854437d0/1456259201659/X01A2449.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696ba3dc21b861f8f9a6d35/1456264034989/X01A2570.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696ba48a976afd1429b0be2/1456265376215/X01A2595.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696ba6aa976afd1429b0d81/1456265656846/X01A2621.jpg|https://static1.squarespace.com/static/5637db2fe4b0fdf09da25993/5672102dd82d5e366e707093/5696ba72a976afd1429b0df2/1456265782999/X01A2707.jpg',
+ 'SubWebsite': 'http://www.robincookandco.com/fleminglakedevelopment',
+ 'SubdivisionName': 'Fleming Lake Drive',
+ 'SubdivisionNumber': 962826530372056010248894688562,
+ 'Suffix': '0556',
+ 'ZIP': '48103',
+ 'sub_Status': 'Active'}
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 573,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 23782,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 25, 10, 55, 15, 628437),
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 9,
+ 'log_count/WARNING': 8,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2019, 6, 25, 10, 55, 6, 769680)}
+INFO:scrapy.core.engine:Spider closed (finished)

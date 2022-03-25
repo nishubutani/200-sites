@@ -1,0 +1,2781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NHlist - An XML schema for the marketing of new-home listings -->
+<!-- Developed and supported by Builder Homesite - bringing the homebuilding industry together. -->
+<!-- Note: Some restrtictions from full XSD have been practiced - notably, all elements have unique names, and no recursions are present - to allow for transitional compatibility with DTD and XDR based systems. These restrictions may be removed by BHI in future extensions of this schema. -->
+<!-- Schema maintained by David Wu - DWu@builderhomesite.com, Ric Lara - RLara@builderhomesite.com, Roopesh Kumar - RKumar@builderhomesite.com, Carl Spendiff - CSpendiff@builderhomesite.com - comments and feedback are encouraged. -->
+<!-- Version 7.7 (12/2020)  -->
+<!-- See NHlist XML Data Integration Guide for change notes and full documentation. -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="7.1">
+	<xsd:element name="Builders">
+		<xsd:annotation>
+			<xsd:documentation>Master: Root element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Corporation" type="CorporationType"/>
+			</xsd:sequence>
+			<xsd:attribute name="DateGenerated" type="xsd:dateTime" use="required">
+				<xsd:annotation>
+					<xsd:documentation>Timestamp when the XML feed (instance) file was created; should uniquely distinguish this feed from subsequent feeds. Local time is acceptable (e.g. 2015-04-01T12:42:37).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="Translate" use="optional">
+				<xsd:annotation>
+					<xsd:documentation>Set ="InSpanish" If it's a Spanish feed, "ToSpanish" if it's a English feed requiring translation to Spanish, "" Otherwise </xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value=""/>
+						<xsd:enumeration value="InSpanish"/>
+						<xsd:enumeration value="ToSpanish"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="FileID" type="xsd:nonNegativeInteger" use="optional">
+				<xsd:annotation>
+					<xsd:documentation>Unique Identifier for XML files. Used for tracking files that require  translation </xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="CorporationType">
+		<xsd:annotation>
+			<xsd:documentation>The highest organizational entity for a builder.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CorporateBuilderNumber">
+				<xsd:annotation>
+					<xsd:documentation>Unique ID to identify your corporation; may be arbitrary, but distinct from BuilderNumber.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="CorporateState">
+				<xsd:annotation>
+					<xsd:documentation>State in which corporate (parent) is incorporated, or where headquarters is located.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="CorporateName">
+				<xsd:annotation>
+					<xsd:documentation>Name for corporate reports.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="40"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="CorporateReportingEmail" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Address to which batched copies of leads will be sent (all in one email).  NOTE: Cannot be same as a lower-level recipient, to avoid conflict with primary owner of leads.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="EmailType">
+							<xsd:attribute name="SendToCorporateOnly" type="xsd:boolean" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>If SendToCorporateOnly is true, leads will be delivered to this recipient only.  Default is to deliver leads to builder or community lead recipients including this corporate recipient.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Builder" type="BuilderType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BuilderType">
+		<xsd:annotation>
+			<xsd:documentation>A single builder (or division, branded or unbranded) and its developments.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="BuilderNumber">
+				<xsd:annotation>
+					<xsd:documentation>Unique ID among all builder's divisions.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="BrandName">
+				<xsd:annotation>
+					<xsd:documentation>Builder name used for consumer marketing. Must be short, e.g. "Happy Hammer Builders" -- do not include market/sales region in name.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="BrandLogo_Med" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Medium logo image for brand. URL only.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="LogoImageType">
+							<xsd:maxLength value="500"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="BrandLogo_Sm" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Small logo image for brand. URL only.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="LogoImageType">
+							<xsd:maxLength value="500"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReportingName">
+				<xsd:annotation>
+					<xsd:documentation>Builder name used for reporting, e.g. regional division name.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="75"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DefaultLeadsEmail" type="LeadRecipientType">
+				<xsd:annotation>
+					<xsd:documentation>Email address to which leads should be sent, if no recipients are specified at lower levels (subdivision) for a particular lead.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CopyLeadsEmail" type="LeadRecipientType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Email address to which leads should be copied to (cc).  This is in addition to the builder default lead recipient.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BuilderParentNumber" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DO NOT USE. This node will be removed in a future version of the schema (deprecated at 2.0).</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="BuilderWebsite" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Link to builder homepage.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Market" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>DO NOT USE. This node will be removed in a future version of the schema (deprecated at 3.1).</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="MarketType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Subdivision" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="SubdivisionType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubsCount" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optional: Total number of Subdivision elements.  Used by BHI to verify successful import.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="BuilderTypeType" use="optional"/>
+		<xsd:attribute name="CustomBuilder" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="HomestoreID" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:integer"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="AgentCoop" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Specifies if builder compensates Real estate agents.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:boolean"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="AgentPartnershipPact" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Specifies if builder accepts BDX's Builder-Agent Partnership Pact.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:boolean"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:simpleType name="BuilderTypeType">
+		<xsd:annotation>
+			<xsd:documentation>Builder type (production or manufactured).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+			<xsd:enumeration value="Production"/>
+			<xsd:enumeration value="Manufactured"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="SubdivisionType">
+		<xsd:annotation>
+			<xsd:documentation>A builder-community (subdivision).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SubdivisionNumber">
+				<xsd:annotation>
+					<xsd:documentation>Unique ID among all builder's subdivisions.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="SubdivisionName">
+				<xsd:annotation>
+					<xsd:documentation>Marketing name for subdivision, to be used for consumers. Do not start with "The"; see usage guide.  Note: If BuildOnYourLot, name may be overridden.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="60"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="SubParentName" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DO NOT USE. This node will be removed in a future version of the schema (deprecated at 7.5).</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="MarketingChannel" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Marketing channel(s) to display subdivision within.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="NewHomeSource"/>
+						<xsd:enumeration value="NewRetirementCommunities"/>
+						<xsd:enumeration value="Move"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="UseDefaultLeadsEmail" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Setting to true means the sales leads will go to the Builder (Default) recipient.  Setting to false requires specifying the subdivision lead recipient.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubLeadsEmail" type="LeadRecipientTypeWithMultipleEmails" minOccurs="0" maxOccurs="2">
+				<xsd:annotation>
+					<xsd:documentation>Email address to which sales leads within this subdivision should be sent. If specified, overrides Builder (Default) recipient.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BuildOnYourLot" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Special use: Set =1 if this "subdivision" is actually a BOYL offering (not tied to a specific community).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CommunityStyle" type="SubCommunityType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Searchable community "lifestyle" attributes, e.g. gated, active-adult, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SalesOffice">
+				<xsd:annotation>
+					<xsd:documentation>Sales office information.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="SubContactType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubAddress" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Address of the community, e.g. intersection or block number of main-entry street. Use is *required* (implied) if sales office is located outside of the subdivision (OutOfCommunity=1), optional otherwise.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="SubStreet1" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="100"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SubStreet2" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="100"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SubCounty" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="20"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SubCity">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="40"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SubState">
+							<xsd:annotation>
+								<xsd:documentation>Use 2-digit USPS abbreviations for USA states or 2-digit CPC abbreviations for CAN provinces.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="2"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SubZIP">
+							<xsd:annotation>
+								<xsd:documentation>USA postalcode - 5 digits or +4 in this format: 12345-0001; CAN postalcode - 6 character string in this format: A1A 1A1</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:minLength value="5"/>
+									<xsd:maxLength value="10"/>
+									<xsd:pattern value="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SubCountry" type="CountryType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Country code from the allowed list</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SubGeocode" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="SubLatitude" type="xsd:decimal"/>
+									<xsd:element name="SubLongitude" type="xsd:decimal"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DrivingDirections" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Driving directions to this subdivision (sales office). Should direct consumers from major city highways/roads.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="2000"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Schools" type="SchoolDistrictType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>District and schools serving K-12 grades in this community. Important: NCES IDs (http://nces.ed.gov/globallocator/) are strongly recommended: text-only names may not be matched for searching/display.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubAmenity" default="1" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Physical features available within this community.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:boolean">
+							<xsd:attribute name="Type" type="SubAmenitiesType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Service" type="ServiceType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Standard services (required for homeownership, or included at no added cost) offered within this community.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Utility" type="UtilityType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Utilities, especially public utilities, serving this community.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubMarketingHeadline" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Marketing headline for this subdivision</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="SubDescription" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Marketing description of this subdivision</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="2000"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="SubImage" type="SubImageType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Subdivision photograph (aerial view, area amenities, driving directions map etc.).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubVideoFile" type="VideoFileType" minOccurs="0" maxOccurs="10">
+				<xsd:annotation>
+					<xsd:documentation>Multimedia presentation of subdivison.  Will be resized for presentation.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubVideoTour" type="VideoType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Subdivision video or multimedia presentation (hosted via URL).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubInteractiveMedia" type="SubInteractiveMediaType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Subdivision Interactive Media</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubWebsite" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>URL link to local sales info.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="2000"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="AccreditationSeal" type="AccreditationImageType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Accreditation Seal Image with optional clickable URL.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EnvisionDesignCenter" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>"Optional Envision Design Center URL at subdivision level. Link to Envision.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="LotsTotal" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Upcoming: Total number of lots in community (sold or unsold).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LotsAvailable" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of unsold lots currently being offered for sale.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Taxes" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TotalTaxRate" type="xsd:decimal" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Total tax rate per $100 valuation.  Includes all taxing entities such as school district tax, county and city tax.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AgentCommission" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Agent Comission</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:decimal">
+							<xsd:attribute name="RateType" default="Percent">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Percent"/>
+										<xsd:enumeration value="Flat"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="CommissionBasis">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="BasePrice"/>
+										<xsd:enumeration value="BasePriceWithLot"/>
+										<xsd:enumeration value="BasePriceWithOptions"/>
+										<xsd:enumeration value="BasePriceWithLotWithOptions"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="PayoutTiming">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Agreement"/>
+										<xsd:enumeration value="Closing"/>
+										<xsd:enumeration value="Phased"/>
+										<xsd:enumeration value="Slab"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="AdditionalCommissionComments">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="100"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Promotion" minOccurs="0" maxOccurs="9">
+				<xsd:annotation>
+					<xsd:documentation>Promotional details for this subdivision.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PromoType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Event" type="EventType" minOccurs="0" maxOccurs="6"/>
+			<xsd:element name="GreenProgram" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="GreenProgramType">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="OpenAmenity" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Amenity "bullet point" marketing description (not searchable). Max 250 char.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="Type" use="required">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="CommunityServices"/>
+										<xsd:enumeration value="Custom"/>
+										<xsd:enumeration value="Education"/>
+										<xsd:enumeration value="HealthAndFitness"/>
+										<xsd:enumeration value="LocalAreaAmenities"/>
+										<xsd:enumeration value="SocialActivities"/>										
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="CustomType" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Custom type Open Amenity name</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="50"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Ordinal position of this open amenity within others of the same Type, starting with 0 (e.g. {0,1,2,..}). Important: value must be unique among other same-type open amenities for this subdivision listing.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="AmenityWebsite" type="xsd:anyURI" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>URL link to additional information about this amenity.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Testimonial" minOccurs="0" maxOccurs="3">
+				<xsd:annotation>
+					<xsd:documentation>Quotation from a satisfied customer. Max 500 char.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Ordinal position of this testimonial, starting with 0 (e.g. {0,1,2,..}). Value must be unique among other testimonials for this listing.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="Attribution" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Display name for customer(s) giving the testimonial, e.g. "Ibrahim R.", "Mr. &amp; Mrs. Ferguson", etc.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="100"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubBrochure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Subdivision specific brochures</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Brochure" type="BrochureType" maxOccurs="3">
+							<xsd:annotation>
+								<xsd:documentation>Up to 3 brochures can be sent</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="IncludeWithHomeBrochure" type="xsd:boolean" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ApptScheduler" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Schedule appointment with builder</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="SchedulerURL" minOccurs="1" maxOccurs="1">
+							<xsd:annotation>
+								<xsd:documentation>URL link to external website for scheduling appointment with builder.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:anyURI">
+									<xsd:maxLength value="2000"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AgentPolicy" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Real estate agent policy applicable to this community</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="AgentPolicyType">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="BuyerRegistrationForm" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="BuyerRegistrationFormType">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Plan" type="ListingType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PlanCount" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optional: Total number of Plan elements for this Subdivision.  Used by BHI to verify successful import.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Status" type="SubStatusType" use="optional" default="Active">
+			<xsd:annotation>
+				<xsd:documentation>Marketing status for this subdivision (does not affect whether or not subdivision will display). Note: Status=ComingSoon requires that both PriceLow and PriceHigh should be submitted together, below.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="ShareWithRealtors" type="xsd:boolean" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>If set=1, indicates the subdivision is available to real-estate agents (may be marketed to Realtors).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="PriceLow" type="xsd:decimal" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Low-end of BasePrice range for all listings in this Subdivision. Note: Required for zero-plan subdivisions (e.g. Status=ComingSoon).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="PriceHigh" type="xsd:decimal" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>See PriceLow. High end of range.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SqftLow" type="xsd:nonNegativeInteger" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Low-end of Sqft range for all listings in this Subdivision. Note: Use is recommended for zero-plan subdivisions (e.g. Status=ComingSoon).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SqftHigh" type="xsd:nonNegativeInteger" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>See SqftLow. High end of range.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="AgentCoop" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Specifies if builder compensates Real estate agents.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:boolean"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="AgentPartnershipPact" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Specifies if builder accepts BDX's Builder-Agent Partnership Pact.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:boolean"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="MarketType">
+		<xsd:annotation>
+			<xsd:documentation>Must set one attribute to identify the market: either by ID or by ZIP</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="MarketLeadsEmail" type="LeadRecipientType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Email address to which sales leads for market-oriented programs should be sent. If given, overrides Builder (Default) recipient.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>String containing an NHS Market ID (obtain current list from BHI).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="ZIPInMarket" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>5-digit string containing a USPS ZIP within the desired market area.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ListingType">
+		<xsd:annotation>
+			<xsd:documentation>Master: Plan and Specs (home listings).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PlanNumber">
+				<xsd:annotation>
+					<xsd:documentation>Unique ID among all plans in this subdivision.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PlanBrandName" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Builder name of plan used for consumer marketing. Must be short, e.g. "Happy Hammer Builders" -- do not include market/sales region in name.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PlanBrandLogo" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Logo image for brand at plan level. URL or filename.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="PlanLogoImageType">
+							<xsd:maxLength value="500"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PlanName">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PlanNotAvailable" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Special use: Set =1 if this Plan should NOT be listed as active; only its Specs will be displayed as available.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HotHome" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Special use: Set = 1 if this Plan is marketed as a hot home.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:boolean">
+							<xsd:attribute name="Title" use="required">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="100"/>
+										<xsd:minLength value="1"/>
+										<xsd:pattern value=".*[^\s].*"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="Description" use="optional">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="255"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PlanTypeName" type="PlanDisplayType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Esp. for MultiFamily: Marketing name for home's style, e.g. "Townhouse," "Carriage House."</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BasePrice" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:decimal">
+							<xsd:attribute name="ExcludesLand" type="xsd:boolean" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Optional. Set = 1 if base price excludes land.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="BaseSqft" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Recommended: Finished square footage.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Stories" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of finished, above-ground stories only (do not include Basement).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Baths" type="xsd:nonNegativeInteger">
+				<xsd:annotation>
+					<xsd:documentation>Number of full bathrooms only.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HalfBaths" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of 1/2 (or any non-full) bathrooms. Will be displayed as full+.5.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Bedrooms">
+				<xsd:annotation>
+					<xsd:documentation>Total number of bedrooms. Important: Set MasterBedDown attribute ="Down" if master is on ground floor, "Up" otherwise.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:nonNegativeInteger">
+							<xsd:attribute name="MasterBedLocation" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Set ="Down" if master bedroom is downstairs (ground floor), "Up" otherwise.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value=""/>
+										<xsd:enumeration value="Down"/>
+										<xsd:enumeration value="Up"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Garage">
+				<xsd:annotation>
+					<xsd:documentation>Number of cars able to fit into garage.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:decimal">
+							<xsd:attribute name="Entry" use="optional">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Front"/>
+										<xsd:enumeration value="Rear"/>
+										<xsd:enumeration value="Side"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LivingAreas" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DO NOT USE. This node will be removed in a future version of the schema (deprecated at 6.1).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LivingArea" default="1" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Searchable rooms, e.g. Family room, sunroom, etc.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:boolean">
+							<xsd:attribute name="Type" type="PlanLivingAreaType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DiningAreas" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of dining areas.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Basement" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Set =1 if base plan includes a basement.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:boolean"/>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PlanAmenity" default="1" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Standard features of this plan.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:boolean">
+							<xsd:attribute name="Type" type="PlanAmenityType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PlanOpenAmenity" type="ListingOpenAmenityType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Plan Custom Open Amenities</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MarketingHeadline" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Max 100 chars: 1-line promotional "headline" for this home (intended to be short).</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Description" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Recommended: Text description of this plan's features.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="2000"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Option" type="PlanOptionsType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additive options.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PlanImages" type="ImagesType" minOccurs="0"/>
+			<xsd:element name="PlanVideoFile" type="VideoFileType" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="PlanInteractiveMedia" type="ListingInteractiveMediaType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Plan Interactive Media</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PlanWebsite" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>URL link to builder's website showing information about this plan.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="2000"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EnvisionDesignCenter" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optional Envision Design Center URL at plan level. Link to Envision.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PlanBrochure" type="BrochureType" minOccurs="0" maxOccurs="3">
+				<xsd:annotation>
+					<xsd:documentation>Plan specific brochures</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PlanLocation" default="Corner" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>MultiFamily: Unit is on corner, interior, end of a row</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="20"/>
+						<xsd:enumeration value="Corner"/>
+						<xsd:enumeration value="End"/>
+						<xsd:enumeration value="Interior"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Spec" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Specs based on this plan. Price required; SqFt, Address and MoveInDate strongly recommended. Other entities, if unspecified, will inherit values from plan for display.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="SpecNumber">
+							<xsd:annotation>
+								<xsd:documentation>Unique ID among all Specs associated with the parent Plan.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="30"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecMLSNumber" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Optional MLS Number of the Spec home</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="20"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecSaleStatus" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Sale status of the Spec home as either Sold or Contract Pending </xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="ContractPending"/>
+									<xsd:enumeration value="Sold"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecHotHome" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Special use: Set = 1 if this Spec is marketed as a hot home.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:boolean">
+										<xsd:attribute name="Title" use="required">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:maxLength value="100"/>
+													<xsd:minLength value="1"/>
+													<xsd:pattern value=".*[^\s].*"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+										<xsd:attribute name="Description" use="optional">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:maxLength value="255"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecAddress">
+							<xsd:annotation>
+								<xsd:documentation>Required for spec homes.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="SpecLot" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>Lot #, e.g. for reference on a subdivision map.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="30"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecStreet1" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>Recommended. Block and street of spec home (not sales office).</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="100"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecStreet2" minOccurs="0">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="100"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecCounty" minOccurs="0">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="20"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecCity">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="40"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecState">
+										<xsd:annotation>
+											<xsd:documentation>Use 2-digit USPS abbreviations for USA states or 2-digit CPC abbreviations for CAN provinces.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:length value="2"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecZIP">
+										<xsd:annotation>
+											<xsd:documentation>USA postalcode - 5 digits or +4 in this format: 12345-0001; CAN postalcode - 6 character string in this format: A1A 1A1</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:minLength value="5"/>
+												<xsd:maxLength value="10"/>
+												<xsd:pattern value="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SpecCountry" type="CountryType" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>Country code from the allowed list</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="SpecGeocode" minOccurs="0">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="SpecLatitude" type="xsd:decimal"/>
+												<xsd:element name="SpecLongitude" type="xsd:decimal"/>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecMoveInDate" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Recommended: choose either Month or Day child element based on your data format. Note that dates will generally be displayed to consumers as month/year only.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:choice>
+									<xsd:element name="Month" type="xsd:gYearMonth">
+										<xsd:annotation>
+											<xsd:documentation>ccyy-mm format. Date for searching.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="Day" type="xsd:date">
+										<xsd:annotation>
+											<xsd:documentation>ccyy-mm-dd format. Date for searching.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:choice>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecIsModel" type="xsd:boolean" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Set =1 if this home is a Sales Model. Note: Implies home is not currently available for sale (price may not be displayed).</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecPrice" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Selling price of this spec home.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="ExcludesLand" type="xsd:boolean" use="optional">
+											<xsd:annotation>
+												<xsd:documentation>Optional. Set = 1 if spec price excludes land.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecSqft" type="xsd:nonNegativeInteger" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Recommended: Finished square footage of this spec home.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecLotSizeSqft" type="xsd:integer" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Spec lot size in square feet</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecStories" type="xsd:decimal" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Number of stories (not including basement).</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecUnitLevel" type="xsd:nonNegativeInteger" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>MultiFamily only: Floor/level of unit.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecLocation" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>MultiFamily: Unit is on corner, interior, end of a row</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="20"/>
+									<xsd:enumeration value="Corner"/>
+									<xsd:enumeration value="End"/>
+									<xsd:enumeration value="Interior"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecBaths" type="xsd:nonNegativeInteger" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Number of full bathrooms only.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecHalfBaths" type="xsd:nonNegativeInteger" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Number of 1/2 (or any non-full) bathrooms. Will be displayed as full+.5.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecBedrooms" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Total number of bedrooms. Important: Set MasterBedDown attribute ="Down" if master bedroom is on ground floor, "Up" otherwise.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:nonNegativeInteger">
+										<xsd:attribute name="MasterBedLocation" use="required">
+											<xsd:annotation>
+												<xsd:documentation>Set ="Down" if master bedroom is downstairs (ground floor), "Up" otherwise.</xsd:documentation>
+											</xsd:annotation>
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value=""/>
+													<xsd:enumeration value="Down"/>
+													<xsd:enumeration value="Up"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecGarage" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Number of cars able to fit into garage. </xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="Entry" use="optional">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="Front"/>
+													<xsd:enumeration value="Rear"/>
+													<xsd:enumeration value="Side"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecLivingAreas" type="xsd:nonNegativeInteger" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>DO NOT USE. This node will be removed in a future version of the schema (deprecated at 6.1).</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecLivingArea" default="1" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Included living areas, e.g. family room, sunroom, etc.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:boolean">
+										<xsd:attribute name="Type" type="PlanLivingAreaType" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecDiningAreas" type="xsd:nonNegativeInteger" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Total number of dining areas.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecBasement" type="xsd:boolean" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Set =1 if spec includes a basement.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecMarketingHeadline" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Max 100 chars: 1-line promotional "headline" for this home (intended to be short).</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string"/>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecDescription" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Recommended: Text description of this spec's features.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="2000"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecAmenity" default="1" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Standard features of this home.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:boolean">
+										<xsd:attribute name="Type" type="PlanAmenityType" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecOpenAmenity" type="ListingOpenAmenityType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Spec Custom Open Amenities</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecImages" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="SpecElevationImage" minOccurs="0" maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation>Primary elevation image must not be composite.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:simpleContent>
+												<xsd:extension base="ListingImageType"/>
+											</xsd:simpleContent>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="SpecFloorPlanImage" minOccurs="0" maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation>Use FloorNumber attribute to indicate sequence for display.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:simpleContent>
+												<xsd:extension base="ListingImageType"/>
+											</xsd:simpleContent>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="SpecInteriorImage" minOccurs="0" maxOccurs="unbounded">
+										<xsd:complexType>
+											<xsd:simpleContent>
+												<xsd:extension base="ListingImageType"/>
+											</xsd:simpleContent>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="SpecVirtualTour" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>URL only at this time.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:anyURI">
+												<xsd:maxLength value="255"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SpecVideoFile" type="VideoFileType" minOccurs="0" maxOccurs="10">
+							<xsd:annotation>
+								<xsd:documentation>Recommended: video of spec home</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecInteractiveMedia" type="ListingInteractiveMediaType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Spec Interactive Media</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecWebsite" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>URL link to builder's website showing information about this spec home.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:anyURI">
+									<xsd:maxLength value="2000"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecEnvisionDesignCenter" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Optional Envision Design Center URL at spec home level. Links to Envision.  This must link to a specific home.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:anyURI">
+									<xsd:maxLength value="255"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="SpecBrochure" type="BrochureType" minOccurs="0" maxOccurs="3">
+							<xsd:annotation>
+								<xsd:documentation>Spec home specific brochures</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SpecSelfGuidedTour" type="SelfGuidedTourType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Spec home self-guided tour provider URL or ID as specified by builder</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="Type" type="PlanType" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SpecCount" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optional: Total number of Spec listings for this Plan. Used by BHI to verify successful import.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="PlanType" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="LogoImageType">
+		<xsd:annotation>
+			<xsd:documentation>Builder brand image type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:anyURI">
+				<xsd:attribute name="ReferenceType" use="required" fixed="URL">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Filename"/>
+							<xsd:enumeration value="URL"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PlanLogoImageType">
+		<xsd:annotation>
+			<xsd:documentation>Plan level brand image type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:anyURI">
+				<xsd:attribute name="ReferenceType" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Filename"/>
+							<xsd:enumeration value="URL"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ImagesType">
+		<xsd:annotation>
+			<xsd:documentation>All images for a home (plan/spec) listing.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ElevationImage" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Primary elevation image must not be composite.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ListingImageType"/>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FloorPlanImage" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Sequence images from ground floor up, basement last.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ListingImageType"/>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="InteriorImage" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ListingImageType"/>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="VirtualTour" nillable="true" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>URL only; hosted panoramic photos.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PlanViewer" nillable="true" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>URL only; hosted floorplan/elevation viewer  ("e-brochure") for this plan.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ListingImageType">
+		<xsd:annotation>
+			<xsd:documentation>URL or filename reference. Note image attributes, esp. SequencePosition.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Ordinal position of this image, starting with 0 (e.g. {0,1,2,..}). Value must be unique among other same-type images for this listing.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="Title" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Short headline-style text to display above image, e.g. "Elevation A", "First Floor", etc.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="Caption" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Longer text to display below image, e.g. description. Should not be a duplicate of Title text.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Indicates whether image location (element value) is a URL (HTTP- or FTP-get) or local Filename (FTP-put).</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="IsPreferredSubImage" type="xsd:boolean" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Set = 1 if image to be used as Builder's preferred Community image.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="VideoType">
+		<xsd:annotation>
+			<xsd:documentation>URL reference only. Note attributes, esp. SequencePosition.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Ordinal position of this image, starting with 0 (e.g. {0,1,2,..}). Value must be unique among other same-type images for this listing.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="Title" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Name of video to display for link, e.g. "Take a tour of our community center", etc.  If none is supplied, a default may be used.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="50"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubImageType">
+		<xsd:annotation>
+			<xsd:documentation>URL or filename reference. Note image attributes, esp. SequencePosition.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="DrivingDirectionsMap" type="xsd:boolean" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Set = 1 only If it's the driving directions map image.Note: Exactly one DrivingDirectionsMap image is supported per subdivision. If multiple images have this attribute, only the first one will be displayed.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="Type" use="optional" default="Standard">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Standard"/>
+							<xsd:enumeration value="DrivingDirectionsMap"/>
+							<xsd:enumeration value="SubdivisionBanner"/>
+							<xsd:enumeration value="LotMap"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Ordinal position of this image, starting with 0 (e.g. {0,1,2,..}). Value must be unique among other same-type images for this listing.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="Title" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Short headline-style text to display above image, e.g. "Elevation A", "First Floor", etc.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="Caption" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Longer text to display below image, e.g. description. Should not be a duplicate of Title text.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Indicates whether image location (element value) is a URL (HTTP- or FTP-get) or local Filename (FTP-put).</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="IsPreferredSubImage" type="xsd:boolean" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Set = 1 if image to be used as Builder's preferred Community image.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AccreditationImageType">
+		<xsd:annotation>
+			<xsd:documentation>URL or filename reference for optional Accreditation seal image. Note image attributes, esp. SequencePosition.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Ordinal position of this image, starting with 0 (e.g. {0,1,2,..}).</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="Title" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Short headline-style text to display above image, e.g. "Elevation A", "First Floor", etc.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="Caption" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Longer text to display below image, e.g. description. Should not be a duplicate of Title text.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Indicates whether image location (element value) is a URL (HTTP- or FTP-get) or local Filename (FTP-put).</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="AccreditationWebsite" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Link to Accreditation seal image clickable URL.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:anyURI">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SchoolDistrictType">
+		<xsd:annotation>
+			<xsd:documentation>A school district.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DistrictName" nillable="true">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="LEAID" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>NCES (US Dept of Ed) 7-char ID for school district (Local Education Agency).</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="7"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Elementary" type="SchoolType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Middle" type="SchoolType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="High" type="SchoolType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SchoolType">
+		<xsd:annotation>
+			<xsd:documentation>An individual school.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="NCESID" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>NCES (US Dept of Ed) 12-char ID for school (including 7-char LEAID prefix).</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="12"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ServiceType">
+		<xsd:annotation>
+			<xsd:documentation>A standard (no-added-cost) or required subdivision service. Name only at this time; may extend descriptions in future.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ServiceName" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="MonthlyFee" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="YearlyFee" type="xsd:decimal" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="ServicesType" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="UtilityType">
+		<xsd:annotation>
+			<xsd:documentation>An area utility (usu. serving many subdivisions) which supplies a universal home service.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="UtilityName">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="UtilityPhone" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Util_AreaCode">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="3"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Util_Prefix">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="3"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Util_Suffix">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="4"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Util_Extension" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Up to 7-character extension. Do not include "Ext." prompt.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="7"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="UtilitiesType" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="SubContactType">
+		<xsd:annotation>
+			<xsd:documentation>Builder sales office information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Agent" minOccurs="0" maxOccurs="10">
+				<xsd:annotation>
+					<xsd:documentation>Builder Sales Agent "Firstname Lastname" format only.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="AgentTitle" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Builder Sales Agent Title</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="50"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="AgentEmail" type="MultipleEmailsType" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Specify whether the Media is Flash content</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="AgentPhone" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Builder Sales Agent Phone in xxx-xxx-xxxx format</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:token">
+										<xsd:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="AgentPhoneExt" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Builder Sales Agent Phone Extension</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="5"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="AgentPhotoFilename" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Builder Sales Agent Photo as Filename</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="255"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="AgentPhotoURL" use="optional">
+								<xsd:annotation>
+									<xsd:documentation>Builder Sales Agent Photo as URL</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="255"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Address">
+				<xsd:annotation>
+					<xsd:documentation>Sales office (model) address. Should be located inside community; if no such address is available, set OutOfCommunity attribute =1.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="AddressType">
+							<xsd:attribute name="OutOfCommunity" type="xsd:boolean" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Set =1 if sales office is physically outside of subdivision (community), and then populate SubAddress, below. Affects geolocation mapping of subdivision.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Phone" type="PhoneType" minOccurs="0"/>
+			<xsd:element name="Fax" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="F_AreaCode" nillable="1">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="3"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="F_Prefix" nillable="1">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="3"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="F_Suffix" nillable="1">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="4"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Email" type="MultipleEmailsType" minOccurs="0"/>
+			<xsd:element name="Hours" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Hours sales office is open. Preferred style is: "Mon-Fri 9am-6pm; Sat 9am-12pm; Closed Sun"</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:annotation>
+			<xsd:documentation>US street address format.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Street1" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Block number and street, or intersection. Strongly recommended for all addresses (used for geocoding and routing).</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Street2" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="County" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="20"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="City">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="40"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="State">
+				<xsd:annotation>
+					<xsd:documentation>Use 2-digit USPS abbreviations for USA states or 2-digit CPC abbreviations for CAN provinces.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ZIP">
+				<xsd:annotation>
+					<xsd:documentation>USA postalcode - 5 digits or +4 in this format: 12345-0001; CAN postalcode - 6 character string in this format: A1A 1A1</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="5"/>
+						<xsd:maxLength value="10"/>
+						<xsd:pattern value="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Country" type="CountryType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Country code from the allowed list</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Geocode" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:restriction base="GeocoordinateType">
+							<xsd:sequence>
+								<xsd:element name="Latitude" type="xsd:decimal"/>
+								<xsd:element name="Longitude" type="xsd:decimal"/>
+							</xsd:sequence>
+						</xsd:restriction>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PhoneType">
+		<xsd:annotation>
+			<xsd:documentation>US telephone format with optional extension string.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AreaCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="3"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Prefix">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="3"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Suffix">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="4"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Extension" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Up to 7-character extension. Do not include "Ext." prompt.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="7"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="CountryType">
+		<xsd:annotation>
+			<xsd:documentation>Three character ISO Alpha-3 country code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="USA"/>
+			<xsd:enumeration value="CAN"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="GeocoordinateType">
+		<xsd:annotation>
+			<xsd:documentation>Latitude and longitude for GIS mapping.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Latitude" type="xsd:decimal"/>
+			<xsd:element name="Longitude" type="xsd:decimal"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="EmailType">
+		<xsd:annotation>
+			<xsd:documentation>Generalized format for Internet email addresses.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+			<xsd:pattern value="[\p{L}\d_\-\+]+(\.[\p{L}\d_\-]+)*@[\p{L}\d_\-]+(\.[\p{L}_]+)+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MultipleEmailsType">
+		<xsd:annotation>
+			<xsd:documentation>Generalized format for Internet email addresses.  This will allow multiple emails </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="LeadRecipientType">
+		<xsd:annotation>
+			<xsd:documentation>Email contact designated to receive consumer leads.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="EmailType">
+				<xsd:attribute name="LeadsPerMessage" use="optional" default="All">
+					<xsd:annotation>
+						<xsd:documentation>For a given reporting period, indicates whether All collected leads or maximum of 1 should be sent per email distributed to the recipient.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="All"/>
+							<xsd:enumeration value="1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LeadRecipientTypeWithMultipleEmails">
+		<xsd:annotation>
+			<xsd:documentation>Multiple Email contact designated to receive consumer leads.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MultipleEmailsType">
+				<xsd:attribute name="LeadsPerMessage" use="optional" default="All">
+					<xsd:annotation>
+						<xsd:documentation>For a given reporting period, indicates whether All collected leads or maximum of 1 should be sent per email distributed to the recipient.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="All"/>
+							<xsd:enumeration value="1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="ImageReferenceType">
+		<xsd:annotation>
+			<xsd:documentation>Images can be referenced as a (local, FTP-put) filename or (FTP/HTTP-get) URL.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Filename"/>
+			<xsd:enumeration value="URL"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SubCommunityType">
+		<xsd:annotation>
+			<xsd:documentation>Designated subdivision attributes, e.g. master-planned, adult.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Adult"/>
+			<xsd:enumeration value="AgeRestricted"/>
+			<xsd:enumeration value="CondoOnly"/>
+			<xsd:enumeration value="Gated"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="MasterPlanned"/>
+			<xsd:enumeration value="Townhomes"/>
+			<xsd:enumeration value="Urban"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SubStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Display status for a subdivision.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Active"/>
+			<xsd:enumeration value="Closeout"/>
+			<xsd:enumeration value="ComingSoon"/>
+			<xsd:enumeration value="GrandOpening"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SubAmenitiesType">
+		<xsd:annotation>
+			<xsd:documentation>Designated subdivision physical amenities, e.g. pool, tennis, golf.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Basketball"/>
+			<xsd:enumeration value="Baseball"/>
+			<xsd:enumeration value="Beach"/>
+			<xsd:enumeration value="Clubhouse"/>
+			<xsd:enumeration value="CommunityCenter"/>
+			<xsd:enumeration value="GolfCourse"/>
+			<xsd:enumeration value="Greenbelt"/>
+			<xsd:enumeration value="Lake"/>
+			<xsd:enumeration value="Marina"/>
+			<xsd:enumeration value="Park"/>
+			<xsd:enumeration value="Playground"/>
+			<xsd:enumeration value="Pond"/>
+			<xsd:enumeration value="Pool"/>			
+			<xsd:enumeration value="Soccer"/>
+			<xsd:enumeration value="Tennis"/>
+			<xsd:enumeration value="Trails"/>
+			<xsd:enumeration value="Views"/>
+			<xsd:enumeration value="Volleyball"/>
+			<xsd:enumeration value="WaterfrontLots"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServicesType">
+		<xsd:annotation>
+			<xsd:documentation>Designated subdivision services, e.g. security, maintenance, HOA.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="HOA"/>
+			<xsd:enumeration value="GroundsCare"/>
+			<xsd:enumeration value="Maintenance"/>
+			<xsd:enumeration value="MedicalCare"/>
+			<xsd:enumeration value="Security"/>
+			<xsd:enumeration value="Shopping"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="UtilitiesType">
+		<xsd:annotation>
+			<xsd:documentation>Designated area utilities, e.g. electric, gas, water, etc.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Electric"/>
+			<xsd:enumeration value="Gas"/>			
+			<xsd:enumeration value="Sewer"/>
+			<xsd:enumeration value="Telephone"/>
+			<xsd:enumeration value="Water"/>
+			<xsd:enumeration value="WaterWastewater"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SubInteractiveMediaTypesType">
+		<xsd:annotation>
+			<xsd:documentation>Allowable Subdivision Interactive Media types</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CommunityFeatures"/>
+			<xsd:enumeration value="Cutaway"/>
+			<xsd:enumeration value="ExteriorChanger"/>
+			<xsd:enumeration value="InteractiveSitePlan"/>
+			<xsd:enumeration value="RoomChanger"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ListingInteractiveMediaTypesType">
+		<xsd:annotation>
+			<xsd:documentation>Allowable Plan or Spec Interactive Media types</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Cutaway"/>
+			<xsd:enumeration value="Exterior360View"/>
+			<xsd:enumeration value="ExteriorChanger"/>
+			<xsd:enumeration value="InteractiveFloorplan"/>
+			<xsd:enumeration value="PlanFeatures"/>
+			<xsd:enumeration value="RoomChanger"/>
+			<xsd:enumeration value="VirtualWalkthrough"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InteractiveMediaDisplayOnType">
+		<xsd:annotation>
+			<xsd:documentation>Allowable Subdivision, Plan or Spec Display On partner platform sites</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NewHomeSource"/>
+			<xsd:enumeration value="ArchitectSeries"/>
+			<xsd:enumeration value="All"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="PromoType">
+		<xsd:sequence>
+			<xsd:element name="PromoType" default="Consumer" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="25"/>
+						<xsd:enumeration value="Agent"/>
+						<xsd:enumeration value="Consumer"/>
+						<xsd:enumeration value="NonListing"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PromoHeadline">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PromoDescription">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="250"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="StartDate" type="xsd:date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>ccyy-mm-dd format.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EndDate" type="xsd:date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>ccyy-mm-dd format.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PromoURL" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Link to builder's promo details page.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PromoFilename" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="PlanType">
+		<xsd:annotation>
+			<xsd:documentation>Plan type (single-family or condo).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+			<xsd:enumeration value="MultiFamily"/>
+			<xsd:enumeration value="SingleFamily"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PlanDisplayType">
+		<xsd:annotation>
+			<xsd:documentation>Plan type to display to consumers as detail, e.g. "Condominium", "Townhouse", etc.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+			<xsd:enumeration value="Carriage House"/>
+			<xsd:enumeration value="Condominium"/>
+			<xsd:enumeration value="Duplex"/>
+			<xsd:enumeration value="Garden Home"/>
+			<xsd:enumeration value="Multiplex"/>
+			<xsd:enumeration value="Single Family"/>
+			<xsd:enumeration value="Townhome"/>
+			<xsd:enumeration value="Townhouse"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PlanLivingAreaType">
+		<xsd:annotation>
+			<xsd:documentation>Designated living areas, e.g. family room, sunroom, loft.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="BonusRoom"/>
+			<xsd:enumeration value="DiningRoom"/>
+			<xsd:enumeration value="FamilyRoom"/>
+			<xsd:enumeration value="GameRoom"/>
+			<xsd:enumeration value="GuestRoom"/>
+			<xsd:enumeration value="LivingRoom"/>
+			<xsd:enumeration value="Loft"/>
+			<xsd:enumeration value="MediaRoom"/>
+			<xsd:enumeration value="Office"/>
+			<xsd:enumeration value="Study"/>
+			<xsd:enumeration value="SunRoom"/>		
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PlanAmenityType">
+		<xsd:annotation>
+			<xsd:documentation>Designated home features, e.g. vaulted ceilings, fireplaces.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="BayWindows"/>
+			<xsd:enumeration value="BreakfastArea"/>
+			<xsd:enumeration value="CoveredPatio"/>
+			<xsd:enumeration value="Fireplaces"/>
+			<xsd:enumeration value="GreenConstruction"/>
+			<xsd:enumeration value="MudRoom"/>
+			<xsd:enumeration value="Playroom"/>
+			<xsd:enumeration value="VaultedCeilings"/>
+			<xsd:enumeration value="WalkInClosets"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ListingOpenAmenityType">
+		<xsd:annotation>
+			<xsd:documentation>Custom Open Amenities for Plans and Specs</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Ordinal position of this custom open amenity.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="AmenityWebsite" use="required">
+					<xsd:annotation>
+						<xsd:documentation>URL link to additional information about this amenity.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:anyURI">
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PlanOptionsType">
+		<xsd:annotation>
+			<xsd:documentation>Additive plan option model: type, name, area, price.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="OptionName" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Marketing name for option, e.g. "Secluded retreat", "Bedroom #5", "Three-car garage".</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="OptionPrice" type="xsd:decimal">
+				<xsd:annotation>
+					<xsd:documentation>Additive price of option (amount added to base price of home).  If no-charge option, set value =0.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OptionSqft" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Additive finished square footage of option (amount added to home's finished area if option is selected)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="PlanOptionType" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="PlanOptionType">
+		<xsd:annotation>
+			<xsd:documentation>Core plan option types: bed, bath, garage, living, etc.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Basement"/>
+			<xsd:enumeration value="Bath"/>
+			<xsd:enumeration value="Bedroom"/>
+			<xsd:enumeration value="Elevation"/>
+			<xsd:enumeration value="Garage"/>
+			<xsd:enumeration value="HalfBath"/>			
+			<xsd:enumeration value="LivingArea"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="BrochureType">
+		<xsd:annotation>
+			<xsd:documentation>Brochures from builder</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required"/>
+				<xsd:attribute name="Title" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Short headline-style text to display as the name of the brochure.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Indicates whether brochure location (element value) is a URL (HTTP- or FTP-get) or local Filename (FTP-put).</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="VideoFileType">
+		<xsd:annotation>
+			<xsd:documentation>URL or filename reference. Note attributes, esp. SequencePosition.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="SequencePosition" type="xsd:nonNegativeInteger" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Ordinal position of this image, starting with 0 (e.g. {0,1,2,..}). Value must be unique among other same-type images for this listing.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="Title" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Name of video to display for link, e.g. "Take a tour of our community center", etc.  If none is supplied, a default may be used.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="50"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EventType">
+		<xsd:annotation>
+			<xsd:documentation>Type for Event</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="EventType" default="Consumer" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Agent"/>
+						<xsd:enumeration value="Consumer"/>						
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EventHeadline">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EventDescription">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="250"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Location" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="StartDate" type="xsd:date" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>ccyy-mm-dd format.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StartTime" type="xsd:time" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>hh:mm:ss format.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EndTime" type="xsd:time" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>hh:mm:ss format.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EventURL" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EventFilename" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AgentPolicyType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Title" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BuyerRegistrationFormType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Title" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="50"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="GreenProgramType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Title" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="100"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="ImageReferenceType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubInteractiveMediaType">
+		<xsd:annotation>
+			<xsd:documentation>Subdivision Interactive Media</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="WebsiteURL" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>URL link to additional information about this interactive media.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EmbedCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Code (HTML or otherwise) to embed in the Media</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="SubInteractiveMediaTypesType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Subdivision Interactive Media type like CommunityFeatures, InteractiveSitePlan... </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="Title" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Title of the Media</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="IsFlash" type="xsd:boolean" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Specify whether the Media is Flash content</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="DisplayOn" type="InteractiveMediaDisplayOnType" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Partner platform sites to display the Interactive Media on</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ListingInteractiveMediaType">
+		<xsd:annotation>
+			<xsd:documentation>Plan or Spec Interactive Media</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="WebsiteURL" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>URL link to additional information about this interactive media.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:anyURI">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="EmbedCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Code (HTML or otherwise) to embed in the Media</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="ListingInteractiveMediaTypesType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Plan or Spec Interactive Media type like InteractiveFloorplan, PlanFeatures, RoomChanger... </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="Title" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Title of the Media</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="IsFlash" type="xsd:boolean" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Specify whether the Media is Flash content</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="DisplayOn" type="InteractiveMediaDisplayOnType" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Partner platform sites to display the Interactive Media on</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="SelfGuidedTourType">
+		<xsd:annotation>
+			<xsd:documentation>Self-guided tour from builder</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="TourProvider" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Provider of the self-guided tour</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="NterNow"/>
+							<xsd:enumeration value="SmartRent"/>
+							<xsd:enumeration value="UTour"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="ReferenceType" type="SelfGuidedTourReferenceType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Indicates whether tour location is a URL (HTTP) or provider specified ID.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="SelfGuidedTourReferenceType">
+		<xsd:annotation>
+			<xsd:documentation>Self-guided tour can be referenced as an URL (HTTP) or an ID.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="URL"/>
+			<xsd:enumeration value="ID"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
