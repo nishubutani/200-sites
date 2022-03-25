@@ -1,0 +1,22 @@
+item2 = BdxCrawlingItem_subdivision()
+item2['sub_Status'] = "Active"
+item2['SubdivisionNumber'] = ''
+item2['BuilderNumber'] = self.builderNumber
+item2['SubdivisionName'] = "No Sub Division"
+item2['BuildOnYourLot'] = 0
+item2['OutOfCommunity'] = 0
+#enter any address you fond on the website.
+item2['Street1'] = '1305 TWIN OAKS ROAD EAST'
+item2['City'] = 'NORTHPORT'
+item2['State'] = 'AL'
+item2['ZIP'] = '35473'
+item2['AreaCode'] = ''
+item2['Prefix'] = ""
+item2['Suffix'] = " "
+item2['Extension'] = ""
+item2['Email'] = ""
+item2['SubDescription'] = "Trick Construction encourages and supports an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin. All residential real estate information on this website is subject to the Federal Fair Housing Act Title VIII of the Civil Rights Act of 1968, as amended, which makes it illegal to advertise any preference, limitation, or discrimination because of race, color, religion, sex, handicap, familial states, or national origin, or intention to make any such preference, limitation or discrimination.Your state or local jurisdiction may impose additional requirements. We are committed to the letter and spirit of the United States policy for the achievement of equal housing opportunity"
+item2['SubImage'] = "https://images.squarespace-cdn.com/content/v1/5caf31a7755be20933430199/1555877738378-6N2GN5CJOZN5RDJSE5P8/002+No+Name.JPG?format=1500w|https://images.squarespace-cdn.com/content/v1/5caf31a7755be20933430199/1555877750537-9LHZNWBHWZVKIWAXIA39/007+%282%29No+Name.JPG?format=1500w|https://images.squarespace-cdn.com/content/v1/5caf31a7755be20933430199/1555877760218-CCY3Y2KWHV7JW8D2J4ZF/008TNR+294.JPG?format=1500w|https://images.squarespace-cdn.com/content/v1/5caf31a7755be20933430199/1555877762775-JANBFOCDYPL0HDVOYTTL/15+MGMimosa+Gard.jpg?format=1500w|https://images.squarespace-cdn.com/content/v1/5caf31a7755be20933430199/1555877778619-MUPF2RSXYB3TZHUO1XUG/44ROY+front.JPG?format=1500w|https://images.squarespace-cdn.com/content/v1/5caf31a7755be20933430199/1555877780909-CLTJIPZ3AXWBOOEK5OUK/50+Easton+Place+elev.jpg?format=1500w"
+item2['SubWebsite'] = 'https://www.trickconstruction.com/'
+item2['AmenityType'] = ''
+yield item2
