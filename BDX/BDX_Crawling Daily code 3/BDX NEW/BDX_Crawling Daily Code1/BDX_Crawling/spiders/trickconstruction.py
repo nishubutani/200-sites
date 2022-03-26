@@ -38,17 +38,24 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         item2['AmenityType'] = ''
         yield item2
 
-        link = 'https://giffordandgifford.com/custom-homes/'
+        link = 'https://www.designbasics.com/plan-library/?pg=0&search-type=library&client=aaron@trickconstruction.com'
         yield scrapy.FormRequest(url=link, callback=self.plan, dont_filter=True)
 
 
     def plan(self, response):
 
-        links = response.xpath("//a[contains(@href,'custom-homes/')]/h4/../@href").extract()
+        links = response.xpath('//div[@class="plan-result img"]/a/@href').extract()
         for link in links:
-            link = 'https://giffordandgifford.com/' + str(link)
-            print(link)
+            link = 'https://www.designbasics.com' + str(link)
             yield scrapy.FormRequest(url=link,callback=self.plan_details,dont_filter=True)
+
+        nxt_link = response.xpath("//span[contains(text(),'Next')]/../@href").extract_first('')
+        print(nxt_link)
+        if nxt_link != '':
+            nxt_link = 'https://www.designbasics.com/plan-library/' + nxt_link
+            yield scrapy.FormRequest(url=nxt_link,callback=self.plan,dont_filter=True)
+        else:
+            pass
 
     def plan_details(self,response):
 
@@ -59,7 +66,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            PlanName = response.xpath("//h1/text()").extract_first('').strip()
+            PlanName = response.xpath('//h1[@class="entry-title main_title"]/text()').extract_first('').strip()
         except Exception as e:
             PlanName = ''
             print(e)
@@ -94,7 +101,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
 
         try:
 
-            BaseSqft = response.xpath("//*[contains(text(),'Sq Ft')]/preceding-sibling::strong[1]/text()").extract_first(default='0')
+            BaseSqft = response.xpath('//strong[@class="total_heated_area"]/text()').extract_first(default='0')
             if '_' in BaseSqft:
                 BaseSqft = BaseSqft.split("-")[1]
             BaseSqft = BaseSqft.replace(',', '')
@@ -104,7 +111,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            Baths = response.xpath("//*[contains(text(),'Bath')]/preceding-sibling::strong[1]/text()").extract_first(
+            Baths = response.xpath('//strong[@class="bathrooms"]/text()').extract_first(
                 default='0')
             Baths = re.findall(r"(\d+)", Baths)[0]
 
@@ -118,14 +125,14 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            Bedrooms = response.xpath("//*[contains(text(),'Bed')]/preceding-sibling::strong[1]/text()").extract_first(default='0')
+            Bedrooms = response.xpath('//strong[@class="bedrooms"]/text()').extract_first(default='0')
             Bedrooms = re.findall(r"(\d+)", Bedrooms)[0]
         except Exception as e:
             print(e)
             Bedrooms = 0
 
         try:
-            Garage = response.xpath("//*[contains(text(),'Garage')]/preceding-sibling::strong[1]/text()").extract_first('')
+            Garage = response.xpath('//strong[@class="garage"]/text()').extract_first('')
             # Garage = response.xpath(".//*[contains(text(),'Garages')]/../text()").extract_first(default='0')
             Garage = re.findall(r"(\d+)", Garage)[0]
 
@@ -140,7 +147,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             Description = ""
 
         try:
-            ElevationImage = response.xpath('//div[@class="h-image__frame-container"]/img/@src').extract()
+            ElevationImage = response.xpath('//span[@class="et_pb_image_wrap "]/img/@src').extract()
             ElevationImage = "|".join(ElevationImage)
         except Exception as e:
             print(e)
@@ -173,6 +180,157 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         item['ElevationImage'] = ElevationImage
         item['PlanWebsite'] = PlanWebsite
         yield item
+
+        spec_link = 'https://api.myownmls.com/property/getProperties?userId=12&sortField=id&sortOrder=DESC&status=!Sold&deleted=false&&bathrooms=1-x&bedrooms=1-x&price=5000-50000000&pageNumber=1'
+        yield scrapy.FormRequest(url=spec_link,callback=self.spec_details,dont_filter=True)
+
+    def spec_details(self,response):
+
+        SubdivisionNumber = self.builderNumber
+        unique = str("Plan Unknown") + str(SubdivisionNumber)  # < -------- Changes here
+        unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)  # < -------- Changes here
+        item = BdxCrawlingItem_Plan()
+        item['unique_number'] = unique_number
+        item['Type'] = "SingleFamily"
+        item['PlanNumber'] = "Plan Unknown"
+        item['SubdivisionNumber'] = SubdivisionNumber
+        item['PlanName'] = "Plan Unknown"
+        item['PlanNotAvailable'] = 1
+        item['PlanTypeName'] = 'Single Family'
+        item['BasePrice'] = 0
+        item['BaseSqft'] = 0
+        item['Baths'] = 0
+        item['HalfBaths'] = 0
+        item['Bedrooms'] = 0
+        item['Garage'] = 0
+        item['Description'] = ""
+        item['ElevationImage'] = ""
+        item['PlanWebsite'] = ""
+        yield item
+
+        data = json.loads(response.text)
+        for i in range(0,5):
+            try:
+                SpecStreet1 = data['data'][i]['street']
+            except Exception as e:
+                print(e)
+
+            try:
+                SpecCity = data['data'][i]['city']
+            except Exception as e:
+                print(e)
+
+            try:
+                SpecState =data['data'][i]['state']
+            except Exception as e:
+                print(e)
+
+            try:
+                SpecZIP = data['data'][i]['zipcode']
+            except Exception as e:
+                SpecZIP = '00000'
+
+            unique = SpecStreet1 + SpecCity + SpecState + SpecZIP
+            print(unique)
+            SpecNumber = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)
+
+            f = open("html/%s.html" % SpecNumber, "wb")
+            f.write(response.body)
+            f.close()
+
+            try:
+                PlanNumber = self.builderNumber
+            except Exception as e:
+                print(e)
+
+            try:
+                SpecCountry = "USA"
+            except Exception as e:
+                print(e)
+
+            try:
+                price = data['data'][i]['price']
+                price = re.findall(r"(\d+)", price)[0]
+            except Exception as e:
+                print(e)
+
+            try:
+                SpecBedrooms = data['data'][i]['price']
+                SpecBedrooms = re.findall(r"(\d+)", SpecBedrooms)[0]
+                print(SpecBedrooms)
+            except Exception as e:
+                print(str(e))
+
+            try:
+                SpecBaths = data['data'][0]['bathrooms']
+                tmp = re.findall(r"(\d+)", SpecBaths)
+                SpecBaths = tmp[0]
+                if len(tmp) > 1:
+                    halfbath = 1
+                else:
+                    halfbath = 0
+            except Exception as e:
+                print(str(e))
+
+            try:
+                SpecGarage = data['data'][i]['garagebays']
+                # SpecGarage = re.findall(r"(\d+) Car Garage",SpecGarage)[0]
+            except Exception as e:
+                print(str(e))
+
+            try:
+                SpecSqft = data['data'][i]['squarefeet']
+                SpecSqft = re.findall(r"(\d+)", SpecSqft)[0]
+            except Exception as e:
+                print(str(e))
+
+            try:
+                MasterBedLocation = "Down"
+            except Exception as e:
+                print(e)
+
+            try:
+                SpecDescription = ""
+            except Exception as e:
+                print(e)
+
+            try:
+                image = data['data'][i]['photos']
+                ElevationImage = "|".join(image)
+            except Exception as e:
+                print(e)
+                ElevationImage = ""
+
+
+            web = 'https://www.trickconstruction.com/property?mlsid=' + str(data['data'][i]['id']) + '&address=' + SpecStreet1.replace(" ","_") + "_" + SpecCity + "_" + SpecState + "_" + SpecZIP
+            print(web)
+
+            try:
+                SpecWebsite = response.url
+            except Exception as e:
+                print(e)
+
+
+            item = BdxCrawlingItem_Spec()
+            item['SpecNumber'] = SpecNumber
+            item['PlanNumber'] = unique_number
+            item['SpecStreet1'] = SpecStreet1
+            item['SpecCity'] = SpecCity
+            item['SpecState'] = SpecState
+            item['SpecZIP'] = SpecZIP
+            item['SpecCountry'] = SpecCountry
+            item['SpecPrice'] = price
+            item['SpecSqft'] = SpecSqft
+            item['SpecBaths'] = SpecBaths
+            item['SpecHalfBaths'] = halfbath
+            item['SpecBedrooms'] = SpecBedrooms
+            item['MasterBedLocation'] = MasterBedLocation
+            item['SpecGarage'] = SpecGarage
+            item['SpecDescription'] = SpecDescription
+            item['SpecElevationImage'] = ElevationImage
+            item['SpecWebsite'] = SpecWebsite
+            yield item
+
 
 
 if __name__ == '__main__':
