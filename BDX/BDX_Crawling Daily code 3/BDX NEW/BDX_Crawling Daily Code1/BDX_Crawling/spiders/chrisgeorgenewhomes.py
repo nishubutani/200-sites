@@ -34,7 +34,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         item2['Extension'] = ""
         item2['Email'] = ""
         item2['SubDescription'] = "We believe that beautiful homes begin with customers who want to love the home in which they live … customers who don’t want to settle for a pre-owned house that doesn’t fit their needs or taste. Our philosophy for well over 30 years has been to build a well designed, quality constructed house that is a joy to live in A house that our customers are proud to call Home."
-        item2['SubImage'] = "http://www.chrisgeorgenewhomes.com/images/photos/about-us/101_Daigle-On-Front-Porch.jpg"
+        item2['SubImage'] = "http://www.chrisgeorgenewhomes.com/images/photos/about-us/101_Daigle-On-Front-Porch.jpg|http://www.chrisgeorgenewhomes.com/lib/image.asp?ImageID=267542&ImageType=0|http://www.chrisgeorgenewhomes.com/lib/image.asp?ImageID=267401&ImageType=0"
         item2['SubWebsite'] = 'https://www.cardinalcresthomes.com/'
         item2['AmenityType'] = ''
         yield item2
@@ -57,6 +57,8 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(link)
             yield scrapy.FormRequest(url=link,callback=self.parse4,dont_filter=True)
 
+            # break
+
     def parse4(self,response):
 
         try:
@@ -65,7 +67,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            PlanName = response.xpath('//h2/text()').extract_first(
+            PlanName = response.xpath('//h1/text()').extract_first(
                 default='').strip()
             print(PlanName)
         except Exception as e:
@@ -96,9 +98,9 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            Baths = div.xpath(".//*[contains(text(),'BATH')]/text()").extract_first(default='0').strip().replace(",",
-                                                                                                                 "")
-            Baths = Baths.split(" ")[0]
+            Baths = response.xpath("//*[contains(text(),'Bath')]/following-sibling::div/text()").extract_first(default='0').strip().replace(",","")
+            if '+' in Baths:
+                Baths = Baths.split("+")
             Baths = re.findall(r"(\d+)", Baths)
             Bath = Baths[0]
             print(Baths)
@@ -110,17 +112,13 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            Bedrooms = div.xpath(".//*[contains(text(),'BR')]/text()").extract_first(default='0').strip().replace(",",
-                                                                                                                  "")
-            Bedrooms = Bedrooms.split(" ")[0]
+            Bedrooms = response.xpath("//*[contains(text(),'Bed')]/following-sibling::div/text()").extract_first(default='0').strip().replace(",","")
             print(Bedrooms)
         except Exception as e:
             print(e)
 
         try:
-            Garage = div.xpath(".//*[contains(text(),'Garage')]/text()").extract_first(default='0').strip().replace(",",
-                                                                                                                    "")
-            Garage = Garage.split(" ")[0]
+            Garage = response.xpath("//*[contains(text(),'Garage')]/text()").extract_first(default='0').strip().replace(",","")
             Garage = re.findall(r"(\d+)", Garage)[0]
             print(Garage)
         except Exception as e:
@@ -128,7 +126,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             Garage = 0.0
 
         try:
-            BaseSqft = div.xpath(".//*[contains(text(),'SQ.')]/text()").extract_first(
+            BaseSqft = response.xpath("//*[contains(text(),'SQ.')]/text()").extract_first(
                 default='0').strip().replace(",", "")
             BaseSqft = BaseSqft.split(" ")[0]
             print(BaseSqft)
@@ -137,7 +135,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
 
         try:
-            Description = ""
+            Description = "".join(response.xpath('//div[@class="detailsInfo"]/text()').extract()).strip()
 
             print(Description)
         except Exception as e:
@@ -145,12 +143,12 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
 
         try:
             images = []
-            image1 = response.xpath('//div/a/@href').extract_first('')
-            image2 = response.xpath('//div/a/span/img/@src').extract_first('')
-            if image1 != "":
-                images.append(image1)
-            if image2 != '':
-                images.append(image2)
+            image1 = response.xpath('//div[@id="plan_images"]//a/@href').extract()
+            if image1 != []:
+                for im in image1:
+                    im = 'http://www.chrisgeorgenewhomes.com' + im
+                    images.append(im)
+
             ElevationImage = "|".join(images)
             print(ElevationImage)
         except Exception as e:
