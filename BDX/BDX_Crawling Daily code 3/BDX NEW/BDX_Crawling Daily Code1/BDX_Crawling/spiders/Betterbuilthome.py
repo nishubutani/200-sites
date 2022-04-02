@@ -35,8 +35,9 @@ class BetterbuilthomeSpider(scrapy.Spider):
         item['Extension'] = ""
         item['Email'] ='info@betterbuilthomesmi.com'
         item['SubDescription'] ='Our goal is simple; to get you into a home that is well built, reliable and affordable.A home you will love and want to show off to your friends and family. There is a big difference between a house and your home. Allow us to show you that difference. At Better Built Homes, we do just what our name implies, and we do it with honesty, integrity and an old-fashioned sense of pride in what we do. With 20 years’ experience in the homebuilding industry, you can count on owner Chuck Burt to build the house of your dreams.'
-        item['SubImage']= ''
+        item['SubImage']= 'http://betterbuilthomesmi.com/wp-content/uploads/2015/11/bbh_towering-oaks_ext-1022x495.jpg|http://betterbuilthomesmi.com/wp-content/uploads/2015/12/IMG_5756-743x495.jpg|http://betterbuilthomesmi.com/wp-content/uploads/2015/12/IMG_5755-743x495.jpg'
         item['SubWebsite'] = response.url
+        item['AmenityType'] = ""
         yield item
 
 
