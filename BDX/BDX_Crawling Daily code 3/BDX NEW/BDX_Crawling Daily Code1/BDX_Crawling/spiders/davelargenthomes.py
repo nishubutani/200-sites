@@ -115,6 +115,7 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
             PlanWebsite = response.url
         except Exception as e:
             print(e)
+
         try:
             Bedroo = text_in_html.xpath('//*[contains(text(),"Bed")]/text()').extract_first('').replace("\n","").strip()
             # Bedroom = Bedroo.split(',')[0]

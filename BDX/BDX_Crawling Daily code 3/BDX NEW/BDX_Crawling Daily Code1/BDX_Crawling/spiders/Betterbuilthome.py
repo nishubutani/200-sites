@@ -140,7 +140,7 @@ class BetterbuilthomeSpider(scrapy.Spider):
         item['HalfBaths'] = HalfBaths
         item['Bedrooms'] = Bedrooms
         item['Garage'] = Garage
-        item['Description'] = "Our goal is simple; to get you into a home that is well built, reliable and affordable.A home you will love and want to show off to your friends and family. There is a big difference between a house and your home. Allow us to show you that difference. At Better Built Homes, we do just what our name implies, and we do it with honesty, integrity and an old-fashioned sense of pride in what we do. With 20 years’ experience in the homebuilding industry, you can count on owner Chuck Burt to build the house of your dreams."
+        item['Description'] = ""
         item['ElevationImage'] = ElevationImage
         item['PlanWebsite'] = response.url
         yield item
