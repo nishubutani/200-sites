@@ -170,10 +170,6 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         # yield scrapy.FormRequest(url=link,callback=self.spec_detail,dont_filter=True)
 
 
-
-
-
-
 if __name__ == '__main__':
     from scrapy.cmdline import execute
     execute('scrapy crawl castlepointhomes'.split())

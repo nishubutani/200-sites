@@ -101,7 +101,7 @@ class createHomesSpide1r(scrapy.Spider):
             print("Bedrooms: ", e)
 
         try:
-            Bathroo = response.xpath('//*[contains(text(),"Bath")]/following-sibling::span/text()').extract_first('').strip().replace("\n","").strip()
+            Bathroo = response.xpath('//*[contains(text(),"Bath")]/following-sibling::span/text()').extract_first('').strip().replace("\n","").strip().replace(".0","")
             tmp = re.findall(r"(\d+)", Bathroo)
             Baths = tmp[0]
             if len(tmp) > 1:

@@ -2,6 +2,8 @@ import hashlib
 import re
 
 import scrapy
+from scrapy.utils.response import open_in_browser
+
 from BDX_Crawling.items import BdxCrawlingItem_subdivision, BdxCrawlingItem_Plan
 
 
@@ -37,11 +39,23 @@ class HickmanhomesSpider(scrapy.Spider):
         item['SubWebsite'] = response.url
         yield item
 
+        headers = {
+
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            # 'accept-encoding': 'gzip, deflate, br',
+            'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8,gu;q=0.7',
+            'cache-control': 'max-age=0',
+            # 'cookie': 'PHPSESSID=545aced8c91404668609ed9531df008c',
+            # 'referer': 'https://hickmanhomes.net/custom-homes/',
+            'upgrade-insecure-requests': '1',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'
+        }
 
         link = 'https://hickmanhomes.net/floorplans/'
-        yield scrapy.FormRequest(url=link,callback=self.parse2,dont_filter=True)
+        yield scrapy.FormRequest(url=link,callback=self.parse2,dont_filter=True,headers=headers)
 
     def parse2(self,response):
+        open_in_browser(response)
         divs = response.xpath('//div[@class="elementor-row"]//h2/../../../../../..')
         for div in divs[1:]:
             try:
@@ -49,6 +63,7 @@ class HickmanhomesSpider(scrapy.Spider):
                 # print(PlanName)
             except Exception as e:
                 print("PlanName: ", e)
+
             try:
                 Type = 'SingleFamily'
             except Exception as e:
@@ -99,14 +114,13 @@ class HickmanhomesSpider(scrapy.Spider):
                     HalfBaths = 1
                 else:
                     HalfBaths = 0
-
             except Exception as e:
                 Baths = 0
                 print("Baths: ", e)
 
 
             try:
-                Garage = div.xpath('.x`//*[contains(text(),"Car")]/text()').extract_first('').strip()
+                Garage = div.xpath('.//*[contains(text(),"Car")]/text()').extract_first('').strip()
                 print(Garage)
             except Exception as e:
                 print(e)
