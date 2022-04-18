@@ -97,7 +97,7 @@ class DomegahomesSpider(scrapy.Spider):
             image = ''
 
         try:
-            desc = response.xpath('//p[@class="font_8"]//*[@class="color_11"]//text()').get()
+            desc = "".join(response.xpath('//p[@class="font_8"]//*[@class="color_11"]//text()').extract()[0:2])
         except:
             desc = ''
 

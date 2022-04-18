@@ -40,7 +40,8 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
         item['Extension'] = ""
         item['Email'] = ''
         item['SubDescription'] = 'HBD Homes is a true new custom home builder in the Metro East-St. Louis area. We have several developments located in and around Belleville, Caseyville, Columbia, Freeburg, O’Fallon, Mascoutah, Millstadt, Swansea, Shiloh, Smithton Illinois and throughout St. Clair County IL. We build new custom homes that range in price from $160,000.00 to $2.5 million. This is a large range to cover in our industry where price traditionally determines quality. This is where our company is so different. The quality of service, materials, and craftsmanship are of the highest in our region, and are found at all price points.'
-        item['SubImage'] = "https://homesbydeesign.com/images/plans/the_kensington/kensington.jpg|https://homesbydeesign.com/images/plans/the_clifford/clifford01_1stfl_plan.jpg|https://homesbydeesign.com/images/gallery/the_clifford/clifford_08_82_thumb1000.jpg|https://homesbydeesign.com/images/plans/the_alyssa/alyssa01_1stfl_plan.jpg|https://homesbydeesign.com/images/plans/the_espresso/espresso.jpg"
+        # item['SubImage'] = "https://homesbydeesign.com/images/plans/the_kensington/kensington.jpg|https://homesbydeesign.com/images/plans/the_clifford/clifford01_1stfl_plan.jpg|https://homesbydeesign.com/images/gallery/the_clifford/clifford_08_82_thumb1000.jpg|https://homesbydeesign.com/images/plans/the_alyssa/alyssa01_1stfl_plan.jpg|https://homesbydeesign.com/images/plans/the_espresso/espresso.jpg"
+        item['SubImage'] = "https://homesbydeesign.com/images/sliders/inv_homes_1000_opt.jpg|https://homesbydeesign.com/images/communities/brickyard/Brickyard_Lake_Estates_1000.jpg|https://homesbydeesign.com/images/communities/castlepines/The_Enclave_at_Castle_Pines_1000.jpg"
         item['SubWebsite'] = 'https://www.davelargenthomes.com/'
         item['AmenityType'] = ''
         yield item
@@ -90,7 +91,8 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
             print(e)
 
         try:
-            BasePrice = 0
+            BasePrice = response.xpath('//*[contains(text(),"Price")]/../text()').extract_first('').replace(",","").replace("\n","").strip()
+            BasePrice = re.findall(r"(\d+)", BasePrice)[0]
         except Exception as e:
             print(str(e))
 
@@ -100,14 +102,16 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
             print(e)
 
         try:
-            Bedroo = response.xpath('//*[contains(text(),"Bed")]/../text()').extract_first('').replace("\n","").strip()
+            Bedroo = response.xpath('//*[contains(text(),"Bedrooms")]/../text()').extract_first('').replace("\n","").strip()
+            if 'or' in Bedroo:
+                Bedroo = Bedroo.split("or")[1]
             Bedrooms = re.findall(r"(\d+)", Bedroo)[0]
         except Exception as e:
             Bedrooms = 0
             print("Bedrooms: ", e)
 
         try:
-            Bathroo = response.xpath('//*[contains(text(),"Bath")]/../text()').extract_first('').strip().replace("\n","").strip()
+            Bathroo = response.xpath('//*[contains(text(),"Bathrooms")]/../text()').extract_first('').strip().replace("\n","").strip()
             tmp = re.findall(r"(\d+)", Bathroo)
             Baths = tmp[0]
             if len(tmp) > 1:
@@ -126,12 +130,26 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
             print(e)
             desc = ''
 
+        # try:
+        #     Garage = response.xpath('//*[contains(text(),"Garag")]/text()').extract_first('').strip().replace(',', '')
+        #     Garage = re.findall(r"(\d+)", Garage)[0]
+        # except Exception as e:
+        #     print("Garage: ", e)
+        #     Garage = 0
         try:
-            Garage = response.xpath('//*[contains(text(),"Garag")]/text()').extract_first('').strip().replace(',', '')
+            # Garage = response.xpath('//div[@itemprop="description"]/p/text()[3]').extract_first('')
+            # Garage = re.findall(r"(\d*[three]*[four]*[two]*)[-]*[ ]*car garage", response.text.lower())[0]
+            Garage = Garage = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*car garage", response.text.lower())[0]
+            Garage = Garage.replace("three", "3").replace("four", "4").replace("two", "2")
             Garage = re.findall(r"(\d+)", Garage)[0]
         except Exception as e:
-            print("Garage: ", e)
-            Garage = 0
+            print(e)
+            try:
+                Garage = Garage = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*gar garage", response.text.lower())[0]
+                Garage = Garage.replace("three", "3").replace("four", "4").replace("two", "2")
+                Garage = re.findall(r"(\d+)", Garage)[0]
+            except:
+                Garage = 0
 
         try:
             BaseSqft = response.xpath('//*[contains(text(),"Square")]/../text()').extract_first('').strip().replace(',', '')

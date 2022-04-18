@@ -27,7 +27,7 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
 
         item = BdxCrawlingItem_subdivision()
         item['sub_Status'] = "Active"
-        item['SubdivisionNumber'] = ''
+        item['SubdivisionNumber'] = self.builderNumber
         item['BuilderNumber'] = self.builderNumber
         item['SubdivisionName'] = "No Sub Division"
         item['BuildOnYourLot'] = 0
@@ -41,7 +41,7 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
         item['Suffix'] = ''
         item['Extension'] = ""
         item['Email'] = ''
-        item['SubDescription'] = 'American Home Corp is renowned for magnificent custom built homes and remodeling projects as well as spacious additions to homes in the Central Florida/Orlando area. We build luxurious custom homes in Seminole and Lake County with prominence in the Lake Mary, Sanford, Longwood, Altamonte Springs, Mt. Dora, Eustis, Sorrento, Clermont, and Groveland areas.'
+        item['SubDescription'] = 'We are your premiere Eastern Indiana and Western Ohio home builder for over 25 years. We are here to show you how we can create a custom home to fit your lifestyle. Building your dream home with quality craftsmanship and superb attention to detail is why we are the choice builder in the area.'
         item['SubImage'] = "https://isteam.wsimg.com/ip/45a6e1e8-74aa-4af4-9673-f6c7bbc4730e/75278318_2545661665555081_4281401122104541184_.jpg|https://img1.wsimg.com/isteam/ip/45a6e1e8-74aa-4af4-9673-f6c7bbc4730e/81472367_2663687203752526_5775726115326787584_.jpg/:/rs=w:600,cg:true,m|https://img1.wsimg.com/isteam/ip/45a6e1e8-74aa-4af4-9673-f6c7bbc4730e/75278318_2545661665555081_4281401122104541184_.jpg/:/rs=w:600,cg:true,m"
         item['SubWebsite'] = 'https://trademarkhomesllc.com/'
         item['AmenityType'] = ''
@@ -119,7 +119,12 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
                 Baths = 0
                 print("Baths: ", e)
 
-            Garage = 0
+            try:
+                Garage = div.xpath('.//*[contains(text(),"Car Garage")]/text()').extract_first().strip().replace(',', '')
+                Garage = re.findall(r"(\d+)", Garage)[0]
+            except Exception as e:
+                print(e)
+                Garage =0.0
             try:
                 BaseSqft = div.xpath('.//*[contains(text(),"sq ft")]/text()').extract_first().strip().replace(',', '')
                 BaseSqft = re.findall(r"(\d+)", BaseSqft)[0]
@@ -128,13 +133,15 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
 
             try:
                 ElevationImages = []
-                ElevationImage1 = div.xpath('.//source/@data-srcsetlazy').extract_first('')
+                ElevationImage11 = div.xpath('.//source/@data-srcsetlazy').extract()
                 # ElevationImage2 = div.xpath('.//source/@data-srcsetlazy').extract_first('')
-                if ElevationImage1 != '':
-                    ElevationImage1 = ElevationImage1.split(",")[0].split("//")[1]
-                    ElevationImage1 = ElevationImage1.split("/:")[0]
+                if ElevationImage11 != []:
+                    for ElevationImage1 in ElevationImage11:
+                        ElevationImage1 = ElevationImage1.split(",")[0].split("//")[1]
+                        ElevationImage1 = ElevationImage1.split("/:")[0]
+                        ElevationImage1 = "https://" + ElevationImage1
 
-                    ElevationImages.append(ElevationImage1)
+                        ElevationImages.append(ElevationImage1)
                 # if ElevationImage2 != '':
                 #     ElevationImage2 = ElevationImage2.split(",")[0].split("//")[1]
                 #     ElevationImages.append(ElevationImage2)

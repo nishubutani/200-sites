@@ -57,7 +57,7 @@ class createHomesSpider(scrapy.Spider):
     def parse4(self, response):
 
         try:
-            PlanName = response.xpath('//h2/text()').extract_first('')
+            PlanName = response.xpath('//h1/text()|//h2/text()').extract_first('')
         except Exception as e:
             print("PlanName: ", e)
 
@@ -99,6 +99,8 @@ class createHomesSpider(scrapy.Spider):
 
         try:
             Bedroo = response.xpath('//*[contains(text(),"Bed")]/text()').extract_first('').replace("\n", "").strip()
+            if 'or' in Bedroo:
+                Bedroo = Bedroo.split("or")[0]
             Bedrooms = re.findall(r"(\d+)", Bedroo)[0]
         except Exception as e:
             Bedrooms = 0
@@ -127,8 +129,8 @@ class createHomesSpider(scrapy.Spider):
             desc = ''
 
         try:
-            # Garage = response.xpath('//*[contains(text(),"Garag")]/text()').extract_first('').strip().replace(',', '')
-            # Garage = re.findall(r"(\d+)", Garage)[0]
+            Garage = response.xpath('//*[contains(text(),"Garage")]/text()').extract_first('').strip().replace(',', '')
+            Garage = re.findall(r"(\d+)", Garage)[0]
             Garage = 0
         except Exception as e:
             print("Garage: ", e)

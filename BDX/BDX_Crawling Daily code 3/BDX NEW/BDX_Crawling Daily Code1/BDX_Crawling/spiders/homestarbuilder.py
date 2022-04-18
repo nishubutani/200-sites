@@ -32,7 +32,7 @@ class HomestarbuilderSpider(scrapy.Spider):
         item['Suffix'] = '4454'
         item['Extension'] = ""
         item['Email'] = 'op@ophomes.net'
-        item['SubDescription'] = 'We work directly with our manufacturers to provide the best quality and the best price in the market. Even the best of the best products can fail without proper installation so we have our own experienced, trained technicians to install all our products'
+        item['SubDescription'] = ''
         item['SubImage'] = 'https://homestarbuilder.com/wp-content/uploads/2015/10/Captiva_Model.png'
         item['SubWebsite'] = response.url
         item['AmenityType'] = ''
@@ -69,7 +69,8 @@ class HomestarbuilderSpider(scrapy.Spider):
         garage = re.findall(r'(\d+) Car',response.text)[-1]
 
         try:
-            sqft = re.findall(r'(\d{4}) SQ.FT.',(response.text.replace(',','')))[-1]
+            sqft = re.findall(r'(\d{4}) SQ.FT.',(response.text.replace(',','')))
+            sqft = max(sqft)
         except:
             sqft = 0
 
@@ -98,7 +99,7 @@ class HomestarbuilderSpider(scrapy.Spider):
         item['HalfBaths'] = halfbath
         item['Bedrooms'] = bedroom
         item['Garage'] = garage
-        item['Description'] = 'Ask your sales consultant for prices and details'
+        item['Description'] = ''
         item['ElevationImage'] = "|".join(image)
         item['PlanWebsite'] = response.url
         yield item

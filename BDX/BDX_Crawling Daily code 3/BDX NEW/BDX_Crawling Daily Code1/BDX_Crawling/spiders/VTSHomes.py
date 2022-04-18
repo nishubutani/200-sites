@@ -93,7 +93,7 @@ class vtshomeshomesSpider(scrapy.Spider):
                 pass
 
             try:
-                PlanNumber=int(hashlib.md5(bytes(url,"utf8")).hexdigest(), 16) % (10 ** 30)
+                PlanNumber=int(hashlib.md5(bytes(PlanName,"utf8")).hexdigest(), 16) % (10 ** 30)
             except Exception as e:
                 print(str(e))
 
@@ -127,8 +127,8 @@ class vtshomeshomesSpider(scrapy.Spider):
             item['PlanWebsite'] = url
             yield item
 
-            home_link = 'http://www.vtshomes.com/move-in-ready-homes.php'
-            yield scrapy.Request(url=home_link, callback=self.home_details, meta={'PN': unique_number})
+        home_link = 'http://www.vtshomes.com/move-in-ready-homes.php'
+        yield scrapy.Request(url=home_link, callback=self.home_details, meta={'PN': unique_number})
 
     def home_details(self, response):
         unique = str("Plan Unknown") + self.builderNumber  # < -------- Changes here

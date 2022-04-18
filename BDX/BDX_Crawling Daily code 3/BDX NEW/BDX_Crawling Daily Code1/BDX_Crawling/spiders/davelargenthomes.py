@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import hashlib
+import json
 import re
 import scrapy
 from scrapy.http import HtmlResponse
@@ -162,16 +163,19 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
 
         try:
             ElevationImages = []
-            # ElevationImage1 = response.xpath('//div[@class="left z-float-left"]/img/@src').extract_first('')
+            ElevationImage1 = response.xpath('//wix-image[@id="img_undefined"]/@data-image-info').extract_first('')
+
+            dtaa = json.loads(ElevationImage1)
+            ElevationImage1 = dtaa['imageData']['uri']
+            ElevationImage1 = "https://static.wixstatic.com/media/" + ElevationImage1
+
             ElevationImage2 = response.xpath("//img//@src").extract()[1:]
-            # if ElevationImage1 != '':
-            #     ElevationImage1 = 'https://www.americanfamilyhomesinc.com' + ElevationImage1
             if ElevationImage2 != []:
                 for image in ElevationImage2:
                     image = image.split(".png")[0]
                     image = image + ".png"
                     ElevationImages.append(image)
-                # ElevationImages.append(ElevationImage1)
+                ElevationImages.append(ElevationImage1)
 
             ElevationImage = "|".join(ElevationImages)
 

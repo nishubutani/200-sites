@@ -1,17 +1,14 @@
-
 # -*- coding: utf-8 -*-
 import hashlib
 import re
-
 import scrapy
-
 from BDX_Crawling.items import BdxCrawlingItem_subdivision, BdxCrawlingItem_Plan, BdxCrawlingItem_Spec
 
 
 class ZemanhomesSpider(scrapy.Spider):
     name = 'adhomes'
     allowed_domains = []
-    start_urls = ['http://zeman-construction.com/']
+    start_urls = ['http://www.adhomes.com/']
 
     builderNumber = "51330"
 
@@ -49,7 +46,7 @@ class ZemanhomesSpider(scrapy.Spider):
         item['AmenityType'] = ''
         yield item
 
-        PlanName,BaseSqft,Bedrooms,Baths,HalfBaths,Garage,Description,ElevationImage = 'THE FRENCHGLEN','',"3","2","","2","3 Bedrooms, 2 Baths plus Office. Open floor plan with covered Front Porch and Rear Patio. Over sized 2-car Garage w/ opener & keypad. Plank floor in Entry, Great Room, Dining Room, Kitchen, and Office. Large walk-in-shower in Owner's Bath. Quartz solid surface counter tops in Kitchen. Gas fireplace.","adhomes.com/wp-content/uploads/Frenchglen-Color-Ren-640w-2.png"
+        PlanName,BaseSqft,Bedrooms,Baths,HalfBaths,Garage,Description,ElevationImage = 'THE FRENCHGLEN','',"3","2","","2","3 Bedrooms, 2 Baths plus Office. Open floor plan with covered Front Porch and Rear Patio. Over sized 2-car Garage w/ opener & keypad. Plank floor in Entry, Great Room, Dining Room, Kitchen, and Office. Large walk-in-shower in Owner's Bath. Quartz solid surface counter tops in Kitchen. Gas fireplace.","https://www.adhomes.com/wp-content/uploads/Frenchglen-Color-Ren-640w-2.png"
         try:
             PlanNumber = int(hashlib.md5(bytes(PlanName, "utf8")).hexdigest(), 16) % (10 ** 30)
         except Exception as e:
@@ -77,7 +74,7 @@ class ZemanhomesSpider(scrapy.Spider):
         item['PlanWebsite'] = response.url
         yield item
 
-        PlanName, BaseSqft, Bedrooms, Baths, HalfBaths, Garage, Description, ElevationImage = 'THE CLOVERDALE', '', "3", "2", "", "0", "Open floor plan great room, ideal for entertaining. 3 bedroom, 2 bathrooms. Wood floors in entry, great room, dining room, and kitchen. Quartz solid surface counter tops. Air conditioning included. Fully landscaped and fenced yard with sprinkler system.", "adhomes.com/wp-content/uploads/Cloverdale-Color-Rend-2.png"
+        PlanName, BaseSqft, Bedrooms, Baths, HalfBaths, Garage, Description, ElevationImage = 'THE CLOVERDALE', '', "3", "2", "", "0", "Open floor plan great room, ideal for entertaining. 3 bedroom, 2 bathrooms. Wood floors in entry, great room, dining room, and kitchen. Quartz solid surface counter tops. Air conditioning included. Fully landscaped and fenced yard with sprinkler system.", "https://www.adhomes.com/wp-content/uploads/Cloverdale-Color-Rend-2.png"
         try:
             PlanNumber = int(hashlib.md5(bytes(PlanName, "utf8")).hexdigest(), 16) % (10 ** 30)
         except Exception as e:

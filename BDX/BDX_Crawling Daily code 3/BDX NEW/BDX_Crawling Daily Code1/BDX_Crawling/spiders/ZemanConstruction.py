@@ -161,7 +161,7 @@ class ZemanhomesSpider(scrapy.Spider):
                 if 'Garage' in Description:
                     G=re.findall('» (.*?) Garage',Description)[0]
                     if G =='Integrated':
-                        Garage=1.0
+                        Garage=0.0
                     elif 'Car' in G:
                             if 'Two' in G:
                                 Garage= 2.0
@@ -202,7 +202,7 @@ class ZemanhomesSpider(scrapy.Spider):
         item['HalfBaths'] = HalfBaths
         item['Bedrooms'] = Bedrooms
         item['Garage'] = Garage
-        item['Description'] = Description
+        item['Description'] = ""
         item['ElevationImage'] = ElevationImage
         item['PlanWebsite'] = response.url
         yield item
