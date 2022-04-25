@@ -88,12 +88,22 @@ class DomegahomesSpider(scrapy.Spider):
             price = 0
 
         try:
-            image = "|".join(response.xpath('//div[@class="gallery-item-content image-item gallery-item-visible gallery-item gallery-item-preloaded  load-with-color  "]/picture/source/@srcset').extract())
+            image1 = []
+            image = response.xpath('//div[@class="gallery-item-content image-item gallery-item-visible gallery-item gallery-item-preloaded  load-with-color  "]/picture/source/@srcset').extract()
+            for im in image:
+                if ',' in im:
+                    im = im.split(",")[0]
+                    image1.append(im)
+            image = "|".join(image1)
         except:
             image = ''
 
         try:
             desc = "".join(response.xpath('//p[@class="font_8"]//*[@class="color_11"]//text()').extract()[0:2])
+            if desc == '952 Peachcrest Drive':
+                desc = "The Golden Model is another one our of newest models, a multi generational home. The home includes an additional suite, complete with a mini kitchenette, a full bath with a curb less shower, a living/bedroom space and private entrance, perfect for housing a caregiver, visiting family, and the occasional mother-in-law. In addition to being a man cave or office space due to the privacy that is offered. The home is defined by the open floor plan, complimented by the custom tile work and plant shelving throughout the home"
+            elif desc == " ":
+                desc= "The Montrose Model, with an open floor plan with its large windows and vaulted ceilings give this home a warm and comfortable feeling. With the family area, dining and kitchen all open and connected, it is a true great room. A showcase of elegance and design for the home owner that wants to enjoy all the comforts of a home that exceeds their expectations.Complete with custom tile work and vaulted ceilings throughout"
         except:
             desc = ''
 
