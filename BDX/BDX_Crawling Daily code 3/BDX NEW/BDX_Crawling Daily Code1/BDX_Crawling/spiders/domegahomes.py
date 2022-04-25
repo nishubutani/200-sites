@@ -31,17 +31,13 @@ class DomegahomesSpider(scrapy.Spider):
         item['Suffix'] = '8245'
         item['Extension'] = ""
         item['Email'] = 'sales@domegahomes.com'
-        item[
-            'SubDescription'] = 'Over 40 years of AWARD WINNING EXPERIENCE Where lifestyle, design, and energy efficiency meet'
-        item[
-            'SubImage'] = 'https://static.wixstatic.com/media/2cccd9_ae676e4895e94121a278a6f7e5ff9115~mv2_d_3000_1804_s_2.jpg/v1/fill/w_1582,h_951,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_ae676e4895e94121a278a6f7e5ff9115~mv2_d_3000_1804_s_2.jpg|https://static.wixstatic.com/media/2cccd9_7e3982b437d64fd68493388d6308f010~mv2_d_7080_3982_s_4_2.jpg/v1/fill/w_1583,h_890,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_7e3982b437d64fd68493388d6308f010~mv2_d_7080_3982_s_4_2.jpg|https://static.wixstatic.com/media/2cccd9_68c44a25c3d448818218cf4747008813~mv2_d_7680_4320_s_4_2.jpg/v1/fill/w_1583,h_890,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_68c44a25c3d448818218cf4747008813~mv2_d_7680_4320_s_4_2.jpg|https://static.wixstatic.com/media/2cccd9_8a3bf9da6c66466d96aeae2093287c52~mv2_d_7080_3982_s_4_2.jpg/v1/fill/w_1583,h_890,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_8a3bf9da6c66466d96aeae2093287c52~mv2_d_7080_3982_s_4_2.jpg'
+        item['SubDescription'] = 'Over 40 years of AWARD WINNING EXPERIENCE Where lifestyle, design, and energy efficiency meet'
+        item['SubImage'] = 'https://static.wixstatic.com/media/2cccd9_ae676e4895e94121a278a6f7e5ff9115~mv2_d_3000_1804_s_2.jpg/v1/fill/w_1582,h_951,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_ae676e4895e94121a278a6f7e5ff9115~mv2_d_3000_1804_s_2.jpg|https://static.wixstatic.com/media/2cccd9_7e3982b437d64fd68493388d6308f010~mv2_d_7080_3982_s_4_2.jpg/v1/fill/w_1583,h_890,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_7e3982b437d64fd68493388d6308f010~mv2_d_7080_3982_s_4_2.jpg|https://static.wixstatic.com/media/2cccd9_68c44a25c3d448818218cf4747008813~mv2_d_7680_4320_s_4_2.jpg/v1/fill/w_1583,h_890,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_68c44a25c3d448818218cf4747008813~mv2_d_7680_4320_s_4_2.jpg|https://static.wixstatic.com/media/2cccd9_8a3bf9da6c66466d96aeae2093287c52~mv2_d_7080_3982_s_4_2.jpg/v1/fill/w_1583,h_890,al_c,q_85,usm_0.66_1.00_0.01/2cccd9_8a3bf9da6c66466d96aeae2093287c52~mv2_d_7080_3982_s_4_2.jpg'
         item['SubWebsite'] = response.url
         item['AmenityType'] = ''
 
         yield item
-
         planlink ='https://www.domegahomes.com/available'
-
         yield scrapy.Request(url=planlink, callback=self.plan_list,dont_filter=True)
 
 
@@ -125,7 +121,7 @@ class DomegahomesSpider(scrapy.Spider):
         item['Bedrooms'] = bedrooms
         item['Garage'] = garage
         item['Description'] = desc
-        item['ElevationImage'] = '|'.join(image)
+        item['ElevationImage'] = image
         item['PlanWebsite'] = response.url
         yield item
 

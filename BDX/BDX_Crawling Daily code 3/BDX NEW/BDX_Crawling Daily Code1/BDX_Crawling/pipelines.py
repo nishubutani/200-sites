@@ -245,38 +245,38 @@ class BdxCrawlingPipeline(object):
 def get_details(builder_number):
     try:
 
-        print(builder_number)
-        master_con = pymongo.MongoClient('mongodb://nishant.b:Nishant#123@51.161.13.140:27017/?authSource=admin')
-        master_data = master_con["bdx_daily"].temp_phase_8.find_one({'BuilderNumber': str(builder_number)})
-        # master_data = master_con["bdx_daily"].bdx_388site_trial2.find_one({'CorporateBuilderNumber': str(builder_number)})
+        # print(builder_number)
+        # master_con = pymongo.MongoClient('mongodb://nishant.b:Nishant#123@51.161.13.140:27017/?authSource=admin')
+        # master_data = master_con["bdx_daily"].temp_phase_8.find_one({'BuilderNumber': str(builder_number)})
+        # # master_data = master_con["bdx_daily"].bdx_388site_trial2.find_one({'CorporateBuilderNumber': str(builder_number)})
+        #
+        # # temp_nishu = list(master_data)
+        # # print(temp_nishu)
+        #
+        # results = master_data
+        # return results
 
-        # temp_nishu = list(master_data)
-        # print(temp_nishu)
+        url = 'https://0344c0c954b148c4a412c7cc64c80f00.us-east-1.aws.found.io:9243'
+        user = 'elastic'
+        password = "vhr4byyTWPcS9TYUN4vqUiYi"
+        data_table = 'bdxstaticdata_2'
 
-        results = master_data
-        return results
+        es = Elasticsearch([url], http_auth=(user, password))
 
-        # url = 'https://0344c0c954b148c4a412c7cc64c80f00.us-east-1.aws.found.io:9243'
-        # user = 'elastic'
-        # password = "vhr4byyTWPcS9TYUN4vqUiYi"
-        # data_table = 'bdxstaticdata_2'
-        #
-        # es = Elasticsearch([url], http_auth=(user, password))
-        #
-        # search = {
-        #     "query": {
-        #         "match": {
-        #             "BuilderNumber": builder_number
-        #         }
-        #     }
-        # }
-        # print(search)
-        #
-        # results = es.search(index=data_table, body=search)
-        # # print(results)
-        #
-        # # results = {'BrandLogo_Med': 'http://www.busterbuilt.com/wp-content/uploads/2017/10/logomain.png', 'BrandName': 'Busterbuilt', 'BuilderNumber': '169997824428359468527692220082', 'BuilderWebsite': 'http://www.busterbuilt.com/', 'CorporateBuilderNumber': '347583766290227853564476213359', 'CorporateName': 'Busterbuilt', 'CorporateState': 'MT', 'DefaultLeadsEmail': 'leads@thebdx.com', 'OutputFile': 'Busterbuilt_Xbyte.xml', 'Phase': 'Phase-2', 'ReportingName': 'Busterbuilt'}
-        # return results['hits']['hits'][0]["_source"]
+        search = {
+            "query": {
+                "match": {
+                    "BuilderNumber": builder_number
+                }
+            }
+        }
+        print(search)
+
+        results = es.search(index=data_table, body=search)
+        # print(results)
+
+        # results = {'BrandLogo_Med': 'http://www.busterbuilt.com/wp-content/uploads/2017/10/logomain.png', 'BrandName': 'Busterbuilt', 'BuilderNumber': '169997824428359468527692220082', 'BuilderWebsite': 'http://www.busterbuilt.com/', 'CorporateBuilderNumber': '347583766290227853564476213359', 'CorporateName': 'Busterbuilt', 'CorporateState': 'MT', 'DefaultLeadsEmail': 'leads@thebdx.com', 'OutputFile': 'Busterbuilt_Xbyte.xml', 'Phase': 'Phase-2', 'ReportingName': 'Busterbuilt'}
+        return results['hits']['hits'][0]["_source"]
 
     except Exception as e:
         print("BuilderNumber Not Valid ...")

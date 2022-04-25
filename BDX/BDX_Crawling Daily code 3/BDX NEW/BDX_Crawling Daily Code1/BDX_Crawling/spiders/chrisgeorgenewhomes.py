@@ -99,8 +99,8 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
 
         try:
             Baths = response.xpath("//*[contains(text(),'Bath')]/following-sibling::div/text()").extract_first(default='0').strip().replace(",","")
-            if '+' in Baths:
-                Baths = Baths.split("+")
+            # if '+' in Baths:
+            #     Baths = Baths.split("+")
             Baths = re.findall(r"(\d+)", Baths)
             Bath = Baths[0]
             print(Baths)

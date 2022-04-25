@@ -41,7 +41,7 @@ class HeavenlyHomesSpider(scrapy.Spider):
         item['Suffix'] = '6596'
         item['Extension'] = ""
         item['Email'] = 'info@heavenly-homes.com'
-        item['SubDescription'] = '''Heavenly Homes is dedicated to staying on the leading edge of technology, energy efficiency and construction techniques in order to provide you a home of the future. From conception to completion, on your lot, or ours, Heavenly Homes is the right choice for all your home building needs. Please feel free to contact us with any questions or inquiries you may have, or to schedule a consultation. We thank you kindly for visiting our site, and your interest in working with us. We look forward to hearing from you soon!'''
+        item['SubDescription'] = '''Heavenly Homes is committed to giving you the opportunity to be a part of building your new home rather than just watching. Whether you have a question about the way something is being done, you would like to have something modified, or you just want to walk the house prior to the next stage of construction, we promise to answer all your questions. After all, shouldn’t you know how your home is being builtHeavenly Homes knows that the complexities of today’s homes are extensive and building to suit all the specific needs of our clients is our top priority. Custom features such as, media rooms, smart homes, safe rooms, wine grottos, and elevators are just a few common features people are requesting in their custom homes today. President of Heavenly Homes, Rory Caton, knows the importance of these custom features and will be assisting you throughout the design, budgeting, and overall construction process. After receiving individual honors in his Construction Science degree, Rory graduated Cum Laude from the College of Architecture at Texas A & M University. Since childhood, he has been fascinated with how and why things work. “I love looking at everything from a small patio to a multi-storied building, analyzing how the form of the structure affects the function, and what could have been done to make it better, whether functionally or aesthetically.” Rory has been blessed with an ability to take geometric shapes and combine them into something that is not only pleasing to the eye, but satisfies the reason for its creation. Now he has taken that natural ability and honed it over time to create wonderful living spaces for every family’s needs here at Heavenly Homes.'''
         item['SubImage'] = image1
         item['SubWebsite'] = response.url
         item['AmenityType'] = ''
@@ -94,24 +94,18 @@ class HeavenlyHomesSpider(scrapy.Spider):
 
         try:
             Garage = response.xpath('//div[@class="frb_text"]/li[4]/text()').get()
-            Garage = re.findall(r"(\d+)", Garage)
-            Garage = str(Garage[0])
+            Garage = re.findall(r"(\d+)", Garage)[0]
+            if Garage == "34":
+                Garage = "4"
         except:
             Garage = 0
 
         try:
             BaseSqft = response.xpath('//div[@class="frb_text"]/li[1]/text()').get().replace(',', '').replace('Square Footage:','').replace('Sq. Ft.','').replace('Sq.Ft.','').replace('Sq. ft.','').replace('Sq.ft.','').strip()
-                # (response.xpath('//div[@class="frb_text"]/li[1]/text()').get().replace(',', '').replace('Square Footage: ','').replace('Sq. Ft.','')).strip()
+            BaseSqft = re.findall(r"(\d+)", BaseSqft)[0]
         except:
-
             BaseSqft = PlanName.split(' ')[3]
 
-        try:
-            Description = ''.join(response.xpath('//div[@class="frb_text"]/text()').extract()).strip().replace('\\x80','').replace('\\xE2','').replace('\\xB2','')
-
-        except:
-            Description = 0
-        #
         try:
             # EleImg = str(re.findall(r'<img class="frb_image_flat" src="(.*?)" alt=""',response.text)).replace('"','').replace('[','').replace(']','').replace('(','').replace(')','')
             EleImg = '|'.join(response.xpath('//span[@class="frb_image_inner"]/img/@src').getall()).replace('"','').replace('[','').replace(']','').replace('(','').replace(')','')
@@ -170,12 +164,12 @@ class HeavenlyHomesSpider(scrapy.Spider):
         item['PlanNotAvailable'] = PlanNotAvailable
         item['PlanTypeName'] = PlanTypeName
         item['BasePrice'] = BasePrice
-        item['BaseSqft'] = (str(BaseSqft).replace(',', '').replace('Square Footage: ','').replace('Sq. Ft.','').replace("<","").replace("'","").replace('"','')).strip()
+        item['BaseSqft'] = BaseSqft
         item['Baths'] = Baths
         item['HalfBaths'] = HalfBaths
         item['Bedrooms'] = Bedrooms
         item['Garage'] = Garage
-        item['Description'] = Description
+        item['Description'] = ""
         item['ElevationImage'] = ElevationImage
         item['PlanWebsite'] = PlanWebsite
 

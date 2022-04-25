@@ -212,7 +212,7 @@ class BrookfieldCustomHomesIncSpider(scrapy.Spider):
             print(e)
 
         try:
-            PlanNumber = response.meta['PN']
+            PlanNumber = self.builderNumber
         except Exception as e:
             print(e)
 
@@ -293,7 +293,7 @@ class BrookfieldCustomHomesIncSpider(scrapy.Spider):
         item['PlanNumber'] = PlanNumber
         item['SpecStreet1'] = SpecStreet1
         item['SpecCity'] = SpecCity
-        item['SpecState'] = 'OK'
+        item['SpecState'] = SpecState
         item['SpecZIP'] = SpecZIP
         item['SpecCountry'] = SpecCountry
         item['SpecPrice'] = SpecPrice

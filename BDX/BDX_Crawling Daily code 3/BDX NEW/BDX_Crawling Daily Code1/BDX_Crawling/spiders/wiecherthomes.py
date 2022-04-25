@@ -50,6 +50,7 @@ class autumnhomeSpider(scrapy.Spider):
         links = response.xpath('//div[@class="summary-title"]/a/@href').extract()
         for link in links:
             link = 'https://www.wiecherthomes.com' + link
+            # link = 'https://www.wiecherthomes.com/the-lakewood'
             yield scrapy.FormRequest(url=link,callback=self.plans,dont_filter=True)
 
     def plans(self,response):
@@ -90,23 +91,43 @@ class autumnhomeSpider(scrapy.Spider):
             print(e)
 
         try:
-            BaseSqft = response.xpath("//h3[contains(text(),'bed')]/text()").extract_first(default='0')
-            BaseSqft = BaseSqft.split('·')[2].strip()
-            BaseSqft = BaseSqft.replace(',', '')
-            BaseSqft = re.findall(r"(\d+)", BaseSqft)[0]
+            BaseSqft = response.xpath("//h3[contains(text(),'bed')]/text()|//h3[contains(text(),'Approx')]/text()").extract_first(default='0')
+            try:
+                BaseSqft = BaseSqft.split('·')[2].strip()
+                BaseSqft = BaseSqft.replace(',', '')
+                BaseSqft = re.findall(r"(\d+)", BaseSqft)[0]
+            except Exception as e:
+                BaseSqft = BaseSqft.replace(',', '')
+                BaseSqft = re.findall(r"(\d+)", BaseSqft)[0]
 
         except Exception as e:
             print(e)
 
         try:
-            Baths = response.xpath("//h3[contains(text(),'bed')]/text()").extract_first(default='0')
-            Baths = Baths.split("·")[1]
-            Baths = Baths.split("·")[0]
-            Baths = re.findall(r"(\d+)", Baths)[0]
-            print(Baths)
-            if len(Baths) > 1:
-                HalfBaths = 1
+            Baths = response.xpath("//h3[contains(text(),'bed')]/text()|//h3[contains(text(),'Bathrooms')]/text()").extract_first(default='0')
+            if 'bath' in Baths:
+                Baths = Baths.split("·")[1]
+                Baths = Baths.split("·")[0]
+                Baths = re.findall(r"(\d+)", Baths)
+                print(Baths)
+                if len(Baths) > 1:
+                    Baths = Baths[0]
+                    HalfBaths = 1
+                else:
+                    Baths = Baths[0]
+                    HalfBaths = 0
+            elif 'Bath' in Baths:
+                Baths = re.findall(r"(\d+)", Baths)
+                print(Baths)
+                if len(Baths) > 1:
+                    Baths = Baths[0]
+                    HalfBaths = 1
+                else:
+                    Baths = Baths[0]
+                    HalfBaths = 0
+
             else:
+                Baths = 0
                 HalfBaths = 0
 
         except Exception as e:
@@ -114,7 +135,7 @@ class autumnhomeSpider(scrapy.Spider):
             print(e)
 
         try:
-            Bedrooms = response.xpath("//h3[contains(text(),'bed')]/text()").extract_first(default='0')
+            Bedrooms = response.xpath("//h3[contains(text(),'bed')]/text()|//h3[contains(text(),'Bed')]/text()").extract_first(default='0')
             Bedrooms = Bedrooms.split("·")[0]
             Bedrooms = re.findall(r"(\d+)", Bedrooms)[0]
         except Exception as e:
@@ -122,7 +143,7 @@ class autumnhomeSpider(scrapy.Spider):
             Bedrooms = 0
 
         try:
-            gara = "".join(response.xpath('//div[@class="sqs-block-content"]//p/text()').extract())
+            gara = "".join(response.xpath('//div[@class="sqs-block-content"]//p/text()|//*[@class="sqs-block-content"]//li/text()').extract())
             Garage = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*car garage", gara.lower())[0]
             Garage = Garage.replace("three", "3").replace("four", "4").replace("two", "2")
             Garage = re.findall(r"(\d+)", Garage)[0]
@@ -132,12 +153,16 @@ class autumnhomeSpider(scrapy.Spider):
             Garage = 0
 
         try:
-            Description = ''
+            Description = ''.join(response.xpath('//*[@class="sqs-block-content"]/p/text()').getall())
         except Exception as e:
             print(e)
 
         try:
-            ElevationImage = response.xpath('//figure[@class="loading content-fill"]/img/@data-src').extract_first(default='')
+            image1 = []
+            # image2 = []
+            image1.extend(response.xpath('//*[@class="thumb-image loaded"]/@data-src').getall())
+            image1.append(response.xpath('//figure[@class="loading content-fill"]/img/@data-src').extract_first(default=''))
+            ElevationImage = '|'.join(image1)
         except Exception as e:
             print(e)
             ElevationImage = ""

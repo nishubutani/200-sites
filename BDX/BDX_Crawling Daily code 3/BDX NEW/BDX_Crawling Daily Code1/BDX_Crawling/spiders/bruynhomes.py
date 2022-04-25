@@ -38,6 +38,54 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         item2['AmenityType'] = ''
         yield item2
 
+        SubdivisionNumber = self.builderNumber  # if subdivision is not available
+        planname = "1790 Solitude"
+        PlanNumber = int(hashlib.md5(bytes(planname, "utf8")).hexdigest(), 16) % (10 ** 30)
+        unique = str(PlanNumber) + str(SubdivisionNumber)
+        unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)
+        item = BdxCrawlingItem_Plan()
+        item['Type'] = 'SingleFamily'
+        item['PlanNumber'] = PlanNumber
+        item['unique_number'] = unique_number
+        item['SubdivisionNumber'] = SubdivisionNumber
+        item['PlanName'] = planname
+        item['PlanNotAvailable'] = 0
+        item['PlanTypeName'] = 'Single Family'
+        item['BasePrice'] = ""
+        item['BaseSqft'] = ""
+        item['Baths'] = "2"
+        item['HalfBaths'] = "1"
+        item['Bedrooms'] = "3"
+        item['Garage'] = ""
+        item['Description'] = ""
+        item['ElevationImage'] = "https://bruynhomes.com/wp-content/uploads/2022/03/IMG_4733.jpg"
+        item['PlanWebsite'] = response.url
+        yield item
+
+        SubdivisionNumber = self.builderNumber  # if subdivision is not available
+        planname = "1733 Solitude"
+        PlanNumber = int(hashlib.md5(bytes(planname, "utf8")).hexdigest(), 16) % (10 ** 30)
+        unique = str(PlanNumber) + str(SubdivisionNumber)
+        unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)
+        item = BdxCrawlingItem_Plan()
+        item['Type'] = 'SingleFamily'
+        item['PlanNumber'] = PlanNumber
+        item['unique_number'] = unique_number
+        item['SubdivisionNumber'] = SubdivisionNumber
+        item['PlanName'] = planname
+        item['PlanNotAvailable'] = 0
+        item['PlanTypeName'] = 'Single Family'
+        item['BasePrice'] = ""
+        item['BaseSqft'] = ""
+        item['Baths'] = "2"
+        item['HalfBaths'] = "1"
+        item['Bedrooms'] = "4"
+        item['Garage'] = ""
+        item['Description'] = ""
+        item['ElevationImage'] = "https://bruynhomes.com/wp-content/uploads/2021/10/Cambridge-Front-Elevation-Small-2-scaled.jpg"
+        item['PlanWebsite'] = response.url
+        yield item
+
         link = 'https://bruynhomes.com/gallery-features/'
         yield scrapy.FormRequest(url=link, callback=self.parse2, dont_filter=True)
 
@@ -47,7 +95,6 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             yield scrapy.FormRequest(url=link, callback=self.parse3, dont_filter=True)
 
     def parse3(self, response):
-
         try:
             PlanName = response.xpath('//h3/text()').extract_first('')
             print(PlanName)
@@ -134,7 +181,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
 
         try:
             ElevationImages = []
-            ElevationImage2 = response.xpath("//ul[@class='avia-slideshow-inner']/li/div/div/following-sibling::img/@src").extract()
+            ElevationImage2 = response.xpath("//ul[@class='avia-slideshow-inner']//li/div/div/following-sibling::img/@src").extract()
             if ElevationImage2 != []:
                 for image in ElevationImage2:
                     ElevationImage2 =  image

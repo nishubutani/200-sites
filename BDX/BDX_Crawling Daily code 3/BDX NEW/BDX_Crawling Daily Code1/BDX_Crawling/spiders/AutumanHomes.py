@@ -41,135 +41,152 @@ class autumnhomeSpider(scrapy.Spider):
         item['AmenityType'] = ''
         yield item
 
-    #     home_link = 'https://www.autumnhomesinc.com/current-offerings/'
-    #     yield scrapy.Request(url=home_link, callback=self.spec_links, dont_filter=True)
-    #
-    # def spec_links(self,response):
-    #     links = response.xpath('//div[@class="elementor-widget-container"]/h2/a/@href').extract()[:3]
-    #     for link in links:
-    #         link = 'https://www.autumnhomesinc.com/current-offerings/' + link
-    #         yield scrapy.Request(url=link, callback=self.home_data, dont_filter=True)
-    #
-    #
-    # def home_data(self, response):
-    #     unique = str("Plan Unknown") + str(self.builderNumber)  # < -------- Changes here
-    #     unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (
-    #             10 ** 30)  # < -------- Changes here
-    #     item = BdxCrawlingItem_Plan()
-    #     item['unique_number'] = unique_number
-    #     item['Type'] = "SingleFamily"
-    #     item['PlanNumber'] = "Plan Unknown"
-    #     item['SubdivisionNumber'] = self.builderNumber
-    #     item['PlanName'] = "Plan Unknown"
-    #     item['PlanNotAvailable'] = 1
-    #     item['PlanTypeName'] = 'Single Family'
-    #     item['BasePrice'] = 0
-    #     item['BaseSqft'] = 0
-    #     item['Baths'] = 0
-    #     item['HalfBaths'] = 0
-    #     item['Bedrooms'] = 0
-    #     item['Garage'] = 0
-    #     item['Description'] = ""
-    #     item['ElevationImage'] = ""
-    #     item['PlanWebsite'] = ""
-    #     yield item
+        unique = str("Plan Unknown") + str(self.builderNumber)  # < -------- Changes here
+        unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)  # < -------- Changes here
+        item = BdxCrawlingItem_Plan()
+        item['unique_number'] = unique_number
+        item['Type'] = "SingleFamily"
+        item['PlanNumber'] = "Plan Unknown"
+        item['SubdivisionNumber'] = self.builderNumber
+        item['PlanName'] = "Plan Unknown"
+        item['PlanNotAvailable'] = 1
+        item['PlanTypeName'] = 'Single Family'
+        item['BasePrice'] = 0
+        item['BaseSqft'] = 0
+        item['Baths'] = 0
+        item['HalfBaths'] = 0
+        item['Bedrooms'] = 0
+        item['Garage'] = 0
+        item['Description'] = ""
+        item['ElevationImage'] = ""
+        item['PlanWebsite'] = ""
+        yield item
+
+        home_link = 'https://www.autumnhomesinc.com/current-offerings/'
+        yield scrapy.Request(url=home_link, callback=self.spec_links, dont_filter=True,meta={'unique_number':unique_number})
+
+    def spec_links(self,response):
+        unique_number1 = response.meta['unique_number']
+        divs = response.xpath('//div[@class="elementor-column-wrap elementor-element-populated"]/div[@class="elementor-widget-wrap"]/div/div/h2/a[@target="_blank"]/../../../..')
+        for div in divs:
+            try:
+                address = div.xpath('.//h2/a/text()').extract_first('')
+                print(address)
+            except Exception as e:
+                print(e)
+                address = ''
+
+            if address == '417 BAYBERRY - $1,550,000 - 2022 CAVALCADE HOME!':
+                SpecStreet1 = '417 Bayberry Ln'
+                SpecCity = 'Naperville'
+                SpecState = 'IL'
+                SpecZIP = '60563'
+            elif address == '618 HIGHLAND - $1,375,000':
+                SpecStreet1 = '618 Highland Ave'
+                SpecCity = 'Naperville'
+                SpecState = 'IL'
+                SpecZIP = '60540'
+            else:
+                SpecStreet1 = '235 W Benton Ave'
+                SpecCity = 'Naperville'
+                SpecState = 'IL'
+                SpecZIP = '60540'
+
+            unique = SpecStreet1 + SpecCity + SpecState + SpecZIP
+            unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (
+                        10 ** 30)  # < -------- Changes here
+            SpecNumber = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)
+
+            f = open("html/%s.html" % SpecNumber, "wb")
+            f.write(response.body)
+            f.close()
+
+            try:
+                SpecSqft = div.xpath(".//*[contains(text(),'square feet')]/text()").extract_first('').replace(",","")
+                SpecSqft = re.findall(r'(\d+)', SpecSqft)[0]
+                print(SpecSqft)
+            except:
+                SpecSqft=0
+
+            try:
+                SpecBedrooms = div.xpath(".//*[contains(text(),'Bedrooms')]/text()").extract_first('')
+                if '-' in SpecBedrooms:
+                    SpecBedrooms = SpecBedrooms.split("-")[1]
+                    SpecBedrooms = re.findall(r'(\d+)', SpecBedrooms)[0]
+                else:
+                    SpecBedrooms = re.findall(r'(\d+)', SpecBedrooms)[0]
+
+            except Exception as e:
+                print(str(e))
+                SpecBedrooms = ""
+
+            try:
+                SpecBaths = div.xpath(".//*[contains(text(),'Bath')]/text()").extract_first('')
+                if '-' in SpecBaths:
+                    SpecBaths = SpecBaths.split("-")[1]
+
+                SpecBaths = re.findall(r'(\d+)', SpecBaths)[0]
+            except Exception as e:
+                print(str(e))
+                SpecBaths = ""
+
+            try:
+                SpecGarage = div.xpath(".//*[contains(text(),'Car ')]/text()").extract_first('')
+                if 'option' in SpecGarage:
+                    SpecGarage = re.findall(r'(\d+)', SpecGarage)[1]
+                else:
+                    if '.' in SpecGarage:
+                        SpecGarage = ".".join(re.findall(r'(\d+)', SpecGarage))
+                    else:
+                        SpecGarage = re.findall(r'(\d+)', SpecGarage)[0]
+            except Exception as e:
+                SpecGarage=0.0
+                print(str(e))
+
+            try:
+                price = div.xpath('.//h2/a/text()').extract_first('')
+                price = price.split("$")[1]
+                price = price.split("-")[0].replace(",","")
+                price = re.findall(r'(\d+)', price)[0]
+            except Exception as e:
+                print(e)
+                price = ''
 
 
-        # r=response.text
-        # div=response.xpath('//div[@class="elementor-row"]//div[@class="elementor-widget-container"]//h2//a/@href').extract()
-        # # data=response.xpath('//div[@class="elementor-container elementor-column-gap-default"]//section[@data-element_type="section"]')
-        # # print(data)
-        #
-        # for i in div:
-        #
-        #     link= 'https://www.autumnhomesinc.com/current-offerings/'+i.xpath('//div[@class="elementor-row"]//div[@class="elementor-widget-wrap"]//h2[@class="elementor-heading-title elementor-size-default"]/a/@href').extract_first()
-        #     print(link)
-        #
-        #     SpecCity='Naperville'
-        #     SpecState='IL'
-        #     SpecZIP='60540'
-        #
-        #     specstreet=re.findall('iwloc=near" title="(.*?),',response.text,re.DOTALL)
-        #     print(specstreet)
-        #     for j in specstreet:
-        #         SpecStreet1=j.strip()
-        #         if 'Naperville' in SpecStreet1:
-        #             SpecStreet1=SpecStreet1.replace(' Naperville','')
-        #         unique = SpecStreet1 + SpecCity + SpecState + SpecZIP
-        #         print(unique)
-        #         SpecNumber = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)
-        #
-        #         f = open("html/%s.html" % SpecNumber, "wb")
-        #         f.write(response.body)
-        #         f.close()
-        #
-        #     descr=response.xpath('.//div[@role="tabpanel"]//p/text()').extract()
-        #     if '\xa0' in descr:
-        #         descr=descr.replace('\xa0','')
-        #         print(descr)
-        #
-        #     try:
-        #         Sft = re.findall('built to(.*?)square feet',descr)[0].strip()
-        #         SpecSqft = ''.join(re.findall(r"(\d+)",Sft, re.DOTALL))
-        #         print(SpecSqft)
-        #     except:
-        #         SpecSqft=0
-        #
-        #     try:
-        #         SpecBedrooms = re.findall('square feet features(.*?)bedrooms',descr)[0].strip()
-        #     except Exception as e:
-        #         print(str(e))
-        #
-        #     try:
-        #         SpecBaths = re.findall('bedrooms,(.*?)baths',descr)[0].strip()
-        #     except Exception as e:
-        #         print(str(e))
-        #
-        #     try:
-        #         SpecGarage = re.findall('true(.*?)car garage',descr)[0].strip()
-        #
-        #     except Exception as e:
-        #         SpecGarage=0.0
-        #         print(str(e))
-        #
-        #     # ElevationImage = 'https://www.autumnhomesinc.com/wp-content/uploads' + '|https://www.autumnhomesinc.com/wp-content/uploads'
-        #     elv=re.findall("href='https://www.autumnhomesinc.com/wp-content/uploads(.*?)'",response.text,re.DOTALL)
-        #     if SpecStreet1=='730 Willow Rd':
-        #         ElevationImage= 'https://www.autumnhomesinc.com/wp-content/uploads' + '|https://www.autumnhomesinc.com/wp-content/uploads'.join(elv[0:10])
-        #         print(ElevationImage)
-        #     elif SpecStreet1=='653 S Sleight St':
-        #         ElevationImage = 'https://www.autumnhomesinc.com/wp-content/uploads' + '|https://www.autumnhomesinc.com/wp-content/uploads'.join(elv[10:20])
-        #         print(ElevationImage)
-        #     elif SpecStreet1 == '812 Wellner Rd':
-        #         ElevationImage = 'https://www.autumnhomesinc.com/wp-content/uploads' + '|https://www.autumnhomesinc.com/wp-content/uploads'.join(elv[20:30])
-        #         print(ElevationImage)
-        #     elif SpecStreet1 == '806 S Julian St':
-        #         ElevationImage = 'https://www.autumnhomesinc.com/wp-content/uploads' + '|https://www.autumnhomesinc.com/wp-content/uploads'.join(elv[30:40])
-        #         print(ElevationImage)
-        #     elif SpecStreet1 == '236 N Laird St':
-        #         ElevationImage = 'https://www.autumnhomesinc.com/wp-content/uploads' + '|https://www.autumnhomesinc.com/wp-content/uploads'.join(elv[40:50])
-        #         print(ElevationImage)
-        #
-        #     # ----------------------- Don't change anything here --------------------- #
-        #     item = BdxCrawlingItem_Spec()
-        #     item['SpecNumber'] = SpecNumber
-        #     item['PlanNumber'] = response.meta['PN']
-        #     item['SpecStreet1'] = SpecStreet1
-        #     item['SpecCity'] = SpecCity
-        #     item['SpecState'] = SpecState
-        #     item['SpecZIP'] = SpecZIP
-        #     item['SpecCountry'] = 'USA'
-        #     item['SpecPrice'] = 0.00
-        #     item['SpecSqft'] = SpecSqft
-        #     item['SpecBaths'] = SpecBaths
-        #     item['SpecHalfBaths'] = 0
-        #     item['SpecBedrooms'] = SpecBedrooms
-        #     item['MasterBedLocation'] = "Down"
-        #     item['SpecGarage'] = SpecGarage
-        #     item['SpecDescription'] =descr
-        #     item['SpecElevationImage'] = ElevationImage
-        #     item['SpecWebsite'] = link
-        #     yield item
+            try:
+                image  = div.xpath('.//div[@class="gallery-icon landscape"]/a/@href').extract()
+                SpecElevationImage= "|".join(image)
+            except Exception as e:
+                print(e)
+                SpecElevationImage = ''
+
+            try:
+                Specdesc = div.xpath('.//div[@class="elementor-widget-container"]//p/text()').extract_first('')
+                print(Specdesc)
+            except Exception as e:
+                print(e)
+                Specdesc = ''
+
+            #----------------------- Don't change anything here --------------------- #
+            item = BdxCrawlingItem_Spec()
+            item['SpecNumber'] = SpecNumber
+            item['PlanNumber'] = unique_number1
+            item['SpecStreet1'] = SpecStreet1
+            item['SpecCity'] = SpecCity
+            item['SpecState'] = SpecState
+            item['SpecZIP'] = SpecZIP
+            item['SpecCountry'] = 'USA'
+            item['SpecPrice'] = price
+            item['SpecSqft'] = SpecSqft
+            item['SpecBaths'] = SpecBaths
+            item['SpecHalfBaths'] = 0
+            item['SpecBedrooms'] = SpecBedrooms
+            item['MasterBedLocation'] = "Down"
+            item['SpecGarage'] = SpecGarage
+            item['SpecDescription'] = Specdesc
+            item['SpecElevationImage'] = SpecElevationImage
+            item['SpecWebsite'] = 'https://www.autumnhomesinc.com/current-offerings/'
+            yield item
 
 if __name__ == '__main__':
     from scrapy.cmdline import execute

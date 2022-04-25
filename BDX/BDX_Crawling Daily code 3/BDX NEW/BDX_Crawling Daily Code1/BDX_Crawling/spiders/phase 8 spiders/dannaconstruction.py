@@ -52,8 +52,7 @@ class DannaconstructionSpider(scrapy.Spider):
             yield item
 
             unique = str("Plan Unknown") + str(self.builderNumber)  # < -------- Changes here
-            unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (
-                        10 ** 30)  # < -------- Changes here
+            unique_number = int(hashlib.md5(bytes(unique, "utf8")).hexdigest(), 16) % (10 ** 30)  # < -------- Changes here
             item = BdxCrawlingItem_Plan()
             item['unique_number'] = unique_number
             item['Type'] = "SingleFamily"

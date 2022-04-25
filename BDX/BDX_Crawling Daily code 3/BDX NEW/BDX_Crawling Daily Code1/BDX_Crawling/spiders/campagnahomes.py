@@ -4,7 +4,6 @@ import re
 import scrapy
 from BDX_Crawling.items import BdxCrawlingItem_subdivision, BdxCrawlingItem_Plan, BdxCrawlingItem_Spec
 
-
 class DexterwhiteconstructionSpider(scrapy.Spider):
     name = 'campagnahomes'
     allowed_domains = ['https://www.campagnahomes.com']
