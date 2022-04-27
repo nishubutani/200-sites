@@ -50,6 +50,9 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             print(e)
             sub_imagwe = ""
 
+        if subdivisonName == "Willows Bend":
+            sub_imagwe = "http://www.halhomes.com/wp-content/uploads/2017/02/index-willowsbend.png|http://www.halhomes.com/wp-content/uploads/2017/08/willows-bend-01.png"
+
         map_link = response.xpath("//span[contains(text(),'MAP & DIRECTIONS')]/../@href").extract_first("")
         if map_link != '':
             map_link = 'http://www.halhomes.com' + map_link
@@ -64,15 +67,39 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         try:
             if subdivisonName == 'Falling Brook':
                 street ,city,state,zip = "5757 Falling Brook Dr",'Mason',"OH" , "45040"
+                desc = "Maintenance-Free Custom Built Detached Patio Homes from $625,000 & Landominiums from $429,900. Located at the Golf Center at Kings Island. Clubhouse features an infinity edge pool, fitness center and private party room.Quality Homes with a Personal Touch®, attention to detail, stability and service separate Hal Homes from the rest."
             else:
                 final_link = 'https://www.google.com/maps?ll=39.229611,-84.269133&z=16&t=m&hl=en-GB&gl=US&mapclient=embed&q=6408+Birch+Creek+Dr+Loveland,+OH+45140'
                 street ,city,state,zip = '6408 Birch Creek Dr','Loveland','OH','45140'
+                desc = 'Quality Homes with a Personal Touch®, attention to detail, stability and service separate Hal Homes from the rest.'
 
             # final_link = response.xpath("//*[contains(text(),'View larger map')]/@href").extract_first('')
             # print(final_link)
         except Exception as e:
             print(e)
 
+        try:
+
+            # ------------------------------------------#
+            # ab = []
+            try:
+                aminity = desc
+                aminity = aminity.title()
+            except Exception as e:
+                print(e)
+            amenity_list = ["Pool", "Playground", "GolfCourse", "Tennis", "Soccer", "Volleyball", "Basketball",
+                            "Baseball", "Views", "Lake", "Pond", "Marina", "Beach", "WaterfrontLots", "Park",
+                            "Trails", "Greenbelt", "Clubhouse", "CommunityCenter"]
+            a = list()
+            for i in amenity_list:
+                # print(i)
+                if i in aminity:
+                    # print(i)
+                    a.append(i)
+            ab = '|'.join(a)
+        except Exception as e:
+            print(e)
+            ab = ''
         # try:
         #     if subdivisonName == 'Falling Brook':
         #         final_link = 'https://www.google.com/maps?ll=39.354586,-84.279677&z=16&t=m&hl=en-GB&gl=US&mapclient=embed&q=5757+Falling+Brook+Dr+Mason,+OH+45040'
@@ -161,10 +188,10 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
         item['Suffix'] = ''
         item['Extension'] = ""
         item['Email'] = ''
-        item['SubDescription'] = ''
+        item['SubDescription'] = desc
         item['SubImage'] = sub_imagwe
         item['SubWebsite'] = response.url
-        item['AmenityType'] = ''
+        item['AmenityType'] = ab
         yield item
 
 
@@ -207,7 +234,7 @@ class RivertoRiverLogHomesSpiderSpider(scrapy.Spider):
             try:
                 SpecStreet1 = address.split(",")[0]
                 SpecCity = address.split(',')[1].strip()
-                SpecCity = address.split(',')[0].strip()
+                # SpecCity = address.split(',')[0].strip()
             except Exception as e:
                 print(e)
             try:
