@@ -149,6 +149,12 @@ class CharlesCarpenterConstructionRoofingSpider(scrapy.Spider):
             except Exception as e:
                 print(e)
 
+            if Description == 'Number of Stories ~ 2':
+                if PlanName == 'Saraceno':
+                    Description = 'Stacked stone accents and well placed dormers accentuate this beautiful elevation. Natural light enters the interior through the second story window in the great room which shares a two-sided fire place with the study. French doors lead you into an impressive master suite with large bath looking out to a privacy garden. Upstairs are three more bedrooms, a large loft and bonus room'
+                else:
+                    Description = ''
+
             try:
                 ElevationImage1 = detail.xpath('./../../*[@class="image-list"]//img/@src').extract_first().strip()
                 try:floorplanImage = detail.xpath('./../../*[@class="image-list"]//img[contains(@alt,"FP-")]/@data-src').extract_first().strip()

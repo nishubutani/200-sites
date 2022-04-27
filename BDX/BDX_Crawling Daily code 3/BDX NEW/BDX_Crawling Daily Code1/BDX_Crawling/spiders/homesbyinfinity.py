@@ -47,8 +47,8 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
         item['Suffix'] = '0021'
         item['Extension'] = ""
         item['Email'] = ''
-        item['SubDescription'] = 'With Infinity Homes, you’ll have the opportunity to choose from a wide range of floor plans designed with the easy Southern lifestyle in mind. Want to add a special touch of your own? No problem! Our professional draftsman are ready to accommodate your requests with adjustments that make your home uniquely yours. Our goal is always your satisfaction. That’s why all Infinity Homes are built with the finest materials and craftsmanship.'
-        item['SubImage'] = 'http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00037.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00070.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00093.JPG'
+        item['SubDescription'] = 'Infinity Homes provides personalized service for families seeking a high quality, custom-built home. From our first conversation and throughout the build, our team of professionals is focused on fulfilling your wants and needs. After all, your home is one of the most important purchases of your lifetime. We want you to love it. When you’re 100% happy with your new home, we know we’ve done our jobInfinity Homes has built a reputation on providing our customers the best home value anywhere. We’ve done that by providing high quality custom features and excellent service from our attentive staff and skilled craftsmen.'
+        item['SubImage'] = 'http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00037.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00070.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00093.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00093.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/Kingston.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/Atlantis%20in%20MS.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/DSC00033.JPG|http://www.homesbyinfinity.com/Portals/infinityhomes/Gallery/Album/110/IMG-8014.jpg'
         item['SubWebsite'] = response.url
         item['AmenityType'] = ''
         yield item
@@ -60,7 +60,6 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
         links = response.xpath('//td[@class="album-item"]/div/a/@href').extract()
         for link in links:
             yield scrapy.FormRequest(url=link, callback=self.parse3, dont_filter=True)
-            # yield scrapy.FormRequest(url='https://buildimmaculate.com/the-magnolia/', callback=self.parse3, dont_filter=True)
 
     def parse3(self, response):
         divs = response.xpath('//td[@align="center"]/div[@class="gallerybox4"]')[1:]
@@ -116,10 +115,11 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
 
             try:
                 try:
-                    sqft = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*s.f.", Description.lower())[0]
+                    sqft = div.xpath('.//following-sibling::span//*[contains(text(),"Sq. Ft")]/text()').extract_first('')
+                    # sqft = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*Sq.Ft", Description.lower())[0]
                 except Exception as e:
                     print(e)
-                    sqft = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*square foot", Description.lower())[0]
+                    # sqft = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*square foot", Description.lower())[0]
 
                 sqft = sqft.replace("three", "3").replace("four", "4").replace("two", "2")
                 sqft = sqft.replace(',', '').strip()
@@ -133,21 +133,42 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
 
             try:
 
-                bath = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*bath", Description.lower())[0]
-                tmp = re.findall(r"(\d+)", bath)
-                Baths = tmp[0]
-                if len(tmp) > 1:
-                    HalfBaths = 1
+                if '2.5' in Description:
+                    Baths = '2'
+                    HalfBaths="1"
                 else:
-                    HalfBaths = 0
+
+                    # bath = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*bath", Description.lower())[0]
+                    bath = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*bath", Description.lower())[0]
+                    tmp = re.findall(r"(\d+)", bath)
+                    Baths = tmp[0]
+                    if len(tmp) > 1:
+                        HalfBaths = 1
+                    else:
+                        HalfBaths = 0
             except Exception as e:
                 print(e)
 
             try:
                 Bedrooms = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*[-]*bedroom", Description.lower())[0]
+                if Bedrooms == '':
+                    Bedrooms = re.findall(r"(\d*[three]*[four]*[two]*)[-]*[ ]*bedroom", Description.lower())[0]
+                    if Bedrooms == '':
+                        Bedrooms = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*bdrm", Description.lower())[0]
+                        if Bedrooms == '':
+                            Bedrooms = re.findall(r"(\d*[three]*[four]*[two]*)bedroom", Description.lower())[0]
+                elif Bedrooms == 'ter':
+                    Bedrooms = re.findall(r"(\d*[three]*[four]*[two]*)[ ]*bdrm", Description.lower())[0]
+
                 Bedrooms = re.findall(r"(\d+)", Bedrooms)[0]
             except Exception as e:
                 print(e)
+                try:
+                    Bedrooms = re.findall(r"(\d*[three]*[four]*[two]*)[-]*[ ]*bedroom", Description.lower())[0]
+                    Bedrooms = Bedrooms.replace("three", "3").replace("four", "4").replace("two", "2")
+                    Bedrooms = re.findall(r"(\d+)", Bedrooms)[0]
+                except:
+                    Bedrooms = ''
 
             try:
 
@@ -162,10 +183,8 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
 
 
             try:
-
-                images1 = response.xpath('//div[@class="img-inner dark"]/img/@data-src').extract()
-
-                images2 = response.xpath('.//a/@href').extract_first('')
+                images2 = div.xpath('.//a/@href').extract_first('')
+                images2 = 'http://www.homesbyinfinity.com' + images2
                 if ',' in images2:
                     images2 = images2.split(",")[0]
                     print(images2)
@@ -178,18 +197,10 @@ class DexterwhiteconstructionSpider(scrapy.Spider):
                     print(images3)
                 else:
                     images3 = images3
-
-
                 images = []
-                for id in images1:
-                    id = id
-                    images.append(id)
                 ElevationImage = images
-
                 if images2 != '':
                     ElevationImage.append(images2)
-
-
             except Exception as e:
                 print(e)
 

@@ -22,11 +22,9 @@ class mybrookfieldSpider(scrapy.Spider):
         com=div[1:]
         for k in com:
             comn = 'https://brookfieldcustomhomes.com/communities/'+ k
-
             yield scrapy.FormRequest(url=comn, callback=self.community, dont_filter=True)
 
     def community(self, response):
-
         try:
             SubdivisionName = response.xpath('//h1/text()').extract_first(default='').strip()
             print(SubdivisionName)
@@ -49,6 +47,11 @@ class mybrookfieldSpider(scrapy.Spider):
             ct='Goldsby'
         zp=dv[-1]
 
+        if SubdivisionName == "Vintage Creek":
+            ct = "Norman"
+        elif SubdivisionName == "Fountain View/Las Colinas":
+            ct = "Norman"
+
         try:
             desc=''.join(response.xpath('//div[@class="col-sm-12 no-gutters"]//p/text()').extract())
             if desc=='':
@@ -70,6 +73,24 @@ class mybrookfieldSpider(scrapy.Spider):
         f.write(response.body)
         f.close()
 
+        a = []
+        # aminity = ''.join(response.xpath('//*[@class="ll-features-content__half right col-md-1of2"]/ul[1]/li/text()').extract())
+        try:
+            aminity = ''.join(response.xpath('//div[@class="col-sm-12 no-gutters"]//p/text()').getall())
+            aminity = aminity.title()
+        except Exception as e:
+            print(e)
+
+        amenity_list = ["Pool", "Playground", "GolfCourse", "Tennis", "Soccer", "Volleyball", "Basketball",
+                        "Baseball", "Views", "Lake", "Pond", "Marina", "Beach", "WaterfrontLots", "Park",
+                        "Trails", "Greenbelt", "Clubhouse", "CommunityCenter"]
+        for i in amenity_list:
+            if i in aminity:
+                # print(i)
+                a.append(i)
+        ab = '|'.join(a)
+
+
         item = BdxCrawlingItem_subdivision()
         item['sub_Status'] = "Active"
         item['SubdivisionNumber'] = SubdivisionNumber
@@ -77,7 +98,7 @@ class mybrookfieldSpider(scrapy.Spider):
         item['SubdivisionName'] = SubdivisionName
         item['BuildOnYourLot'] = 0
         item['OutOfCommunity'] = 0
-        item['Street1'] = street1
+        item['Street1'] = street1.replace("Goldsby","")
         item['City'] = ct
         item['State'] = sat
         item['ZIP'] = zp
@@ -89,7 +110,7 @@ class mybrookfieldSpider(scrapy.Spider):
         item['SubDescription'] = desc
         item['SubImage']=img
         item['SubWebsite'] = response.url
-        item['AmenityType'] = ""
+        item['AmenityType'] = ab
         yield item
 
         plan_link = 'https://brookfieldcustomhomes.com/plans/'
@@ -105,11 +126,8 @@ class mybrookfieldSpider(scrapy.Spider):
             yield scrapy.Request(url=link, callback=self.plan_details,meta={'sbdn':  subdivisonNumber},dont_filter=False)
 
     def plan_details(self, response):
-
         SubdivisionNumber = response.meta['sbdn']
-
         name=response.xpath('//div[@class="col-md-9 col-sm-12 margin-b-sm"]//h1/text()').extract_first().strip()
-
         PlanNumber = int(hashlib.md5(bytes(response.url, "utf8")).hexdigest(), 16) % (10 ** 30)
 
         info=response.xpath('//div[@class="col-md-7 col-sm-12 col-xs-12 no-gutters margin-t-sm margin-b-sm"]//h5/text()').extract()
@@ -136,17 +154,10 @@ class mybrookfieldSpider(scrapy.Spider):
             Garage=0.0
 
         try:
-            BsPrice = response.xpath('//div[@class="margin-b-sm"]//h4/text()').extract_first()
-            if '-' in BsPrice:
-                bs=BsPrice.split('-')
-                BsPrice=bs[-1]
+            BsPrice = response.xpath("//h4[contains(text(),'Price: ')]/text()").extract_first().replace(",","")
             BasePrice=''.join(re.findall(r"(\d+)", BsPrice,re.DOTALL))
-            if response.url=='https://brookfieldcustomhomes.com/plans/159-012226/':
-                if int(BasePrice)<40000:
-                    BasePrice=0.00
-            print(BasePrice)
         except:
-            print(response.url)
+            BasePrice = '0.0'
 
         try:
             Desc = response.xpath('//div[@class="col-md-9 col-sm-12 margin-b-sm"]//p/text()').extract_first(default=True)
@@ -201,24 +212,22 @@ class mybrookfieldSpider(scrapy.Spider):
                     link=i
                     yield scrapy.Request(url=link, callback=self.home_details, meta={'PN': unique_number}, dont_filter=True)
 
-
     def home_link_page(self, response):
-            r = response.text
-            PlanNumber = response.meta['PN']
+        r = response.text
+        PlanNumber = response.meta['PN']
 
-            home_links = re.findall('<a href="https://brookfieldcustomhomes.com/homes/(.*?)">', r, re.DOTALL)
-            home = home_links[1:]
-            for home in home:
-                home = 'https://brookfieldcustomhomes.com/homes/' + home
-                yield scrapy.Request(url=home, callback=self.home_details, meta={'PN': PlanNumber}, dont_filter=True)
+        home_links = re.findall('<a href="https://brookfieldcustomhomes.com/homes/(.*?)">', r, re.DOTALL)
+        home = home_links[1:]
+        for home in home:
+            home = 'https://brookfieldcustomhomes.com/homes/' + home
+            yield scrapy.Request(url=home, callback=self.home_details, meta={'PN': PlanNumber}, dont_filter=True)
 
     def home_details(self, response):
-
-            PlanNumber = response.meta['PN']
-            s = response.xpath('//*[contains(text(),"Status: ")]//text()').extract()
-            s = s[-1].strip()
-
-            if s != 'Sold':
+        PlanNumber = response.meta['PN']
+        s = response.xpath('//*[contains(text(),"Status: ")]//text()').extract()
+        s = s[-1].strip()
+        if s != 'Sold':
+            if s != 'Under Contract':
 
                 data = response.xpath(
                     '//div[@class="col-md-7 col-sm-12 col-xs-12 no-gutters margin-t-sm margin-b-sm"]//h5/text()').extract()
@@ -309,7 +318,7 @@ class mybrookfieldSpider(scrapy.Spider):
                 item['PlanNumber'] = PlanNumber
                 item['SpecStreet1'] = SpecStreet1
                 item['SpecCity'] = SpecCity
-                item['SpecState'] = SpecState
+                item['SpecState'] = "OK"
                 item['SpecZIP'] = SpecZIP
                 item['SpecCountry'] = SpecCountry
                 item['SpecPrice'] = SpecPrice
@@ -319,7 +328,7 @@ class mybrookfieldSpider(scrapy.Spider):
                 item['SpecBedrooms'] = SpecBedrooms
                 item['MasterBedLocation'] = MasterBedLocation
                 item['SpecGarage'] = SpecGarage
-                item['SpecDescription'] = SpecDescription
+                item['SpecDescription'] = ''
                 item['SpecElevationImage'] = img
                 item['SpecWebsite'] = response.url
                 yield item
