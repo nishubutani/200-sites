@@ -159,5 +159,8 @@ class CastlebridgeHomesSpider(scrapy.Spider):
         item['PlanWebsite'] = PlanWebsite
         yield item
 
-from scrapy.cmdline import execute
-# execute("scrapy crawl castlebridge_homes".split())
+
+if __name__ == '__main__':
+    
+    from scrapy.cmdline import execute
+    execute("scrapy crawl castlebridge_homes".split())

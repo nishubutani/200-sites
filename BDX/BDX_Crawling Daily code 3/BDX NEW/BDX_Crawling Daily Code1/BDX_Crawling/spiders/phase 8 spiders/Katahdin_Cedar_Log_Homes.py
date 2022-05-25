@@ -50,6 +50,7 @@ class KatahdinCedarLogHomesSpider(scrapy.Spider):
         item['SubDescription'] = response.xpath('//h4/../div//span/text()').extract_first().strip()
         item['SubImage'] = images
         item['SubWebsite'] = response.url
+        item['AmenityType'] = ''
         yield item
 
         try:
@@ -229,5 +230,6 @@ class KatahdinCedarLogHomesSpider(scrapy.Spider):
                 print(e)
 
 
-from scrapy.cmdline import execute
-# execute("scrapy crawl katahdin_cedar_log_homes".split())
+if __name__ == '__main__':
+    from scrapy.cmdline import execute
+    execute("scrapy crawl katahdin_cedar_log_homes".split())

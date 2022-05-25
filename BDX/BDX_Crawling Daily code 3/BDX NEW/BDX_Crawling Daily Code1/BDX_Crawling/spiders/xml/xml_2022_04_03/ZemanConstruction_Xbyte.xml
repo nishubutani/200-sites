@@ -1,0 +1,898 @@
+<Builders DateGenerated="2022-04-03T15:01:04"><Corporation><CorporateBuilderNumber>22745</CorporateBuilderNumber><CorporateState>VA</CorporateState><CorporateName>Zeman Construction</CorporateName><Builder><BuilderNumber>22746</BuilderNumber><BrandName>Zeman Construction</BrandName><BrandLogo_Med ReferenceType="URL">http://zeman-construction.com/wp-content/themes/devster/images/logo.gif</BrandLogo_Med><ReportingName>Zeman Construction</ReportingName><DefaultLeadsEmail LeadsPerMessage="All">leads@thebdx.com</DefaultLeadsEmail><BuilderWebsite>http://zeman-construction.com/</BuilderWebsite><Subdivision Status="Active"><SubdivisionNumber>22746</SubdivisionNumber><SubdivisionName>Zeman Construction</SubdivisionName><BuildOnYourLot>0</BuildOnYourLot><SalesOffice><Address OutOfCommunity="0"><Street1>535 Shelton Mill Road</Street1><City>Charlottesville</City><State>VA</State><ZIP>22903</ZIP></Address></SalesOffice><SubDescription>Zeman Construction is a family owned, Class A Builder specializing in residential construction &amp; renovation as well as light commercial projects. With a passion for building and over 39 years of experience in 4 different states, owner Larry Zeman offers a unique insight into the entire construction process that sets him apart from other builders. Contact us today for your building needs!</SubDescription><SubImage SequencePosition="1" Title="House1" ReferenceType="URL">http://zeman-construction.com/wp-content/themes/devster/timthumb.php?src=http://zeman-construction.com/wp-content/themes/devster/images/house1.jpg&amp;h=265&amp;w=630&amp;zc=1</SubImage><SubImage SequencePosition="2" Title="House1" ReferenceType="URL">http://zeman-construction.com/wp-content/themes/devster/timthumb.php?src=http://zeman-construction.com/wp-content/themes/devster/images/house3.jpg&amp;h=265&amp;w=630&amp;zc=1</SubImage><SubWebsite>http://zeman-construction.com/</SubWebsite><Plan Type="SingleFamily"><PlanNumber>165659285942712852812917224862</PlanNumber><PlanName>Shenandoah House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1784</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,784 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+&#187; Office
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Shenandoah1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Shenandoah2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/shenandoah-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>731267983272057533672836495459</PlanNumber><PlanName>Centralia House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2555</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,555 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Centralia1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Centralia2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/centralia-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>793566255691785984463563075407</PlanNumber><PlanName>Independance III House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>960</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  960 Sq Ft
+Bedrooms: 3
+Bathrooms: 1.0
+Features Include:
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//IndependanceIII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/IndependanceIII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/independance-iii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>587503678130019351262427329233</PlanNumber><PlanName>Spruce Falls House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2066</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,066
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+A pair of octagon windows gives this home its unique appeal.  A good night&amp;#8217;s sleep will be easier to come by in this quiet, secluded master suite and with a built-in desk in each secondary bedroom, there will be no need to drag homework down to the dining room table. Secondary bedrooms share a full, compartmentalized bath with shower, allowing two people to use different areas.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//SpruceFalls1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/SpruceFalls2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/SpruceFalls3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/spruce-falls-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>310543117636768521793349002506</PlanNumber><PlanName>Westgate House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2135</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,135
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+The picturesque porch offers the perfect spot to sip lemonade on a warm, sunny day. Inside, columns visually divide the living and dining rooms while allowing family and friends to move freely between the rooms. A wall of windows makes the family room and breakfast area especially cheery. The master suite is sure to please with a corner whirlpool, private sitting area and unfinished storage.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Westgate1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Westgate2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Westgate3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/westgate-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>892939031919575562421850902857</PlanNumber><PlanName>Deerwood House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1890</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,890 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Laundry Room
+&#187; Office
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Deerwood1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Deerwood2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/deerwood-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>88576192886820142878669957499</PlanNumber><PlanName>Craftsman Bungalow House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>771</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>0.0</Garage><Description>House Series:  771 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; Open Kitchen
+&#187; Living Room
+&#187; Dining Area
+&#187; Covered Porch
+&#187; Hardwood Floors
+&#187; Energy Star &amp;#038; Green Ready
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CraftsmanBungalow1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CraftsmanBungalow2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/craftsman-bungalow-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>705201426502664389850648087938</PlanNumber><PlanName>Liberty II House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1148</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,148 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Covered Porch
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//LibertyII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/LibertyII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/liberty-ii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>252423248962766742418675414788</PlanNumber><PlanName>Brittney House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1543</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,543 Sq Ft
+Bedrooms: 2
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Sun Room
+&#187; Living Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Brittney1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Brittney2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/brittney-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>594209725843093839518746669762</PlanNumber><PlanName>Kenmare House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2416</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,416 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Office
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Kenmare1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Kenmare2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/kenmare-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>167775852231519587756415919646</PlanNumber><PlanName>Cape Vincent House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>960</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>1.0</Garage><Description>House Series:  960 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CapeVincent1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CapeVincent2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/CapeVincent3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cape-vincent-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>512413361190067318835141448058</PlanNumber><PlanName>Somerset I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2001</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,001 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+&#187; Sunroom
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//SomersetI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/SomersetI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/SomersetI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/somerset-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>262119803032095201701554700130</PlanNumber><PlanName>Cumberland House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2016</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,016 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Laundry Room
+&#187; Family Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Cumberland1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Cumberland2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cumberland-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>475368529460757023393425406189</PlanNumber><PlanName>Gracin House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2632</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,632 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Den/Study
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Gracin1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Gracin2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/gracin-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>979169020260735447896203488430</PlanNumber><PlanName>Linden House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1540</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,540 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Linden1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Linden2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/linden-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>842830433631352866658430099759</PlanNumber><PlanName>Stiles House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2753</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,753 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Den/Study
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Stiles1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Stiles2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/stiles-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>272766058128640632670203288769</PlanNumber><PlanName>Catskill I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1182</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,182 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CatskillI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CatskillI2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/catskill-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>602646804658153630135976753084</PlanNumber><PlanName>Timber Ridge II House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1932</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,932 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Family Room
+&#187; Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//TimberRidgeII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/TimberRidgeII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/timber-ridge-ii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>217385065783734011963238595992</PlanNumber><PlanName>Tanner Ridge House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1534</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,534 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//TannerRidge1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/TannerRidge2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/tanner-ridge-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>146222400348350617625416096363</PlanNumber><PlanName>Jamison House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2396</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,396 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Den/Study
+&#187; Laundry Room
+&#187; Great Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Jamison1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Jamison2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/jamison-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>704286782438052329990376936329</PlanNumber><PlanName>Devlyn House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2924</BaseSqft><Baths>3</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,924 Sq Ft
+Bedrooms: 4
+Bathrooms: 3.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Devlyn1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Devlyn2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/devlyn-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>111125637078251387988364025150</PlanNumber><PlanName>Mont Alto House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1638</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,638 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+&#187; Office
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//MontAlto1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/MontAlto2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/mont-alto-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>261356820586822994494888656300</PlanNumber><PlanName>Hamilton I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2559</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,559 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//HamiltonI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/HamiltonI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/HamiltonI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/hamilton-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>136727573530199774676101921519</PlanNumber><PlanName>Orchard Valley House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1390</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,390 Sq. Ft.
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Laundry Room
+Simple lines create an understated sophistication. The open living areas make the home feel spacious and encourages casual get-togethers. A door in the dining area provides convenient access when grilling in the backyard. Separated from secondary bedrooms, the master suite offers a quiet place to take a relaxing bath or grab a quick nap.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//OrchardValley1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/OrchardValley2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/orchard-valley-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>965295629073757047841626221874</PlanNumber><PlanName>Marion House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2245</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,245 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Extended 2nd Floor
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Marion1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Marion2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Marion3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/marion-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>436842762467525400949686597017</PlanNumber><PlanName>Hickory House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2619</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,619 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Den/Study
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Hickory1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Hickory2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/hickory-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>484030010674165703777415196961</PlanNumber><PlanName>Nova I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>864</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>1.0</Garage><Description>House Series:  864 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//NovaI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/NovaI2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/nova-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>884357453665004634364804782350</PlanNumber><PlanName>Bellevue House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2191</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,191 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Den/Study
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Bellevue1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Bellevue2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/bellevue-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>623226655197226140719181171026</PlanNumber><PlanName>Buttonwood House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1529</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,529 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Buttonwood1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Buttonwood2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/buttonwood-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>632698230107198578519423093162</PlanNumber><PlanName>Cape Cod I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1375</BaseSqft><Baths>1</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">1</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,375 Sq Ft
+Bedrooms: 1
+Bathrooms: 1.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Covered Porch
+&#187; Den/Study
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CapeCodI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CapeCodI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/CapeCodI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cape-cod-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>539915744328025401427262196830</PlanNumber><PlanName>Solta House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>6600</BaseSqft><Baths>4</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">5</Bedrooms><Garage>1.0</Garage><Description>House Series:  6,600 Sq Ft
+Bedrooms: 5
+Bathrooms: 4.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Den/Study
+&#187; Breakfast Nook
+&#187; Extended 2nd Floor
+&#187; Family Room
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Solta1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Solta2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Solta3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/solta-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>299248349171523703380768710958</PlanNumber><PlanName>Walnut Hill I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1523</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,523 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Covered Porch
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//WalnutHillI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/WalnutHillI2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/walnut-hill-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>169740966269229751289044383188</PlanNumber><PlanName>Echo Hills House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1640</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,640 Sq. Ft.
+ Unfinished: Adds 689 Sq. Ft.
+Bedrooms: 3
+Bathrooms: 2
+Features Include:
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Family Room
+&#187; Covered Porch
+&#187; Fireplace
+&#187; Walk-in Closet
+&#187; 689 Sq Ft Unfinished Storage
+Thanks to an oversized dormer and cozy porch, you&amp;#8217;ll find this to be a very inviting home. The charming fireplace and two sets of double windows create a warm, sunny family room. Additional cabinets in the dining area make setting the table a breeze. The snack bar provides extra seating or a great spot for a buffet. Adults will appreciate the quiet, secluded master suite with it&amp;#8217;s large walk-in closet and nearby laundry closet.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//EchoHills1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/EchoHills2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/EchoHills3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/echo-hills-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>441357445794773953728640967862</PlanNumber><PlanName>Brockway House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1206</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>1.0</Garage><Description>Main Level:  1,206 Sq Ft
+Unfinished: Adds 825 Sq. Ft.
+Bedrooms: 2
+Bathrooms: 1
+Features Include:
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Extended Second Floor
+&#187; Living Room
+&#187; Upper Level Adds 825 Sq. Ft.
+A see though fireplace warms the living and dining rooms. You&amp;#8217;ll enjoy the island kitchen with snack bar together with a more formal dining area for family meals. Two main floor bedrooms easily expand to three or four bedrooms by finishing a portion of the second floor.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Brockway1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Brockway2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/brockway-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>501268677891284667511392432873</PlanNumber><PlanName>Blue Ridge House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1528</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,528 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Laundry Room
+A huge wrap around porch sets a welcoming tone for this comfortable one-story.&#160; Carrying in groceries will be a snap, with the kitchen so close to the garage entry. Two pantries will make putting those groceries away even easier. Adults will enjoy the secluded master suite. With a laundry closet next to the secondary bedrooms, youngsters might even help wash clothes.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//BlueRidge1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/BlueRidge2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/blue-ridge-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>595031400907620943973384004054</PlanNumber><PlanName>Cape Chelsey I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1177</BaseSqft><Baths>1</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">1</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,177 Sq Ft
+Bedrooms: 1
+Bathrooms: 1.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CapeChelseyI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CapeChelseyI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/CapeChelseyI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cape-chelsey-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>898592113160945734150471158643</PlanNumber><PlanName>Highland House Plan </PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2458</BaseSqft><Baths>3</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,458
+Bedrooms: 4
+Bathrooms: 3.5
+Features Include:
+&#187; Den/Study
+&#187; First Floor Master Bedroom
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Loft
+Pleasing symmetry gives this home a classical look. Adults will enjoy the luxury of a quiet den and the privacy of a secluded master suite with a sunlit whirlpool. Upstairs, secondary bedrooms will be bright and uncluttered, with ample windows and walk-in closets. Ideal for an older child, bedroom 2 features a private bath and large built-in desk.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Highland1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Highland2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Highland3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/highland-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>628060023622622138898197794083</PlanNumber><PlanName>Nova XII House Plans</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1122</BaseSqft><Baths>1</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,122 Sq. Ft.
+Bedrooms: 4
+Bathrooms: 1.5
+Features Include:
+&#187; Covered Porch
+&#187; Living Room
+Your family and friends both will appreciate the generous living room accommodations. The well-equipped country kitchen offers plenty of sunlight. And there&amp;#8217;s the flexibility of four bedrooms as you could always convert one of them into a den or hobby room.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//NovaXII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/NovaXII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/nova-xii-house-plans</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>272803924157000662437221014558</PlanNumber><PlanName>Deer Park House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2397</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,397
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+A porch this large just begs for a swing for warm summer nights. Inside, this Deer Park house plan offers the best of both worlds &#8230; generous formal &amp;amp; informal living spaces. With a see through fireplace you&#8217;ll be able to enjoy cozy evenings snuggling with your special someone on the couch. The laundry room is located next to the kitchen making it convenient to wash a load of cloths while you are getting dinner ready!
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//DeerPark1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/DeerPark2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/DeerPark3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/deer-park-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>72068683550001439815749101844</PlanNumber><PlanName>Anchor Mill House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2597</BaseSqft><Baths>3</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,597
+Bedrooms: 4
+Bathrooms: 3.5
+Features Include:
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Stately columns and repeating gables create an interesting looking home. Guests are greeted by an open entry with a welcoming view of the dining room. An open floor plan in the back of the house also encourages guests to mingle. Upstairs, children have ample storage for toys, games and collections with walk-in closets in each bedroom. To top it off, there&amp;#8217;s a family flex area which may be used as a game room or for a fifth bedroom.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//AnchorMill1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/AnchorMill2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/AnchorMill3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/anchor-mill-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>568324524225122946436840903960</PlanNumber><PlanName>Faulkner House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1650</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,650 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Faulkner1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Faulkner2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/faulkner-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>823704528369086799337393574059</PlanNumber><PlanName>Dillworth House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1733</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,733 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Dillworth1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Dillworth2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/dillworth-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>536041308971902011076239507363</PlanNumber><PlanName>Cherry Hill I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1197</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,197 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CherryHill1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CherryHill2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cherry-hill-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>394302499321390254946728279460</PlanNumber><PlanName>Mission Cove House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2238</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,238
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Den/Study
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Stacked windows and a covered stoop are a few of this home&amp;#8217;s pleasing elements. With rows of windows bridged by a decorative plant shelf, the 2-story great room will lift spirits after a hard day&amp;#8217;s work. In the kitchen, a large corner pantry make it easier to stock up on sale items. On the second floor, a centrally located computer area is sure to be a popular spot for homework, games and bill paying.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//MissionCove1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/MissionCove2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/MissionCove3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/mission-cove-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>173049388993691990070981801380</PlanNumber><PlanName>Crestwood III House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1503</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,503 Sq Ft
+Bedrooms: 4
+Bathrooms: 2
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+&lt;BR&gt;
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CrestwoodIII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CrestwoodIII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/crestwood-iii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>831232810964837570706875018378</PlanNumber><PlanName>Afton Villa House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2760</BaseSqft><Baths>3</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,760 Sq Ft
+Bedrooms: 4
+Bathrooms: 3.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Sunroom
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//AftonVilla1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/AftonVilla2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/AftonVilla3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/afton-villa-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>553268796189050102959778614679</PlanNumber><PlanName>Ultima R41 House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>770</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>1.0</Garage><Description>House Series:  770 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//UltimaR411.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/UltimaR412.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/ultima-r41-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>579167846020374043263169883673</PlanNumber><PlanName>Brentwood III House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1063</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,063 Sq Ft
+Bedrooms: 3
+Bathrooms: 1.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//BrentwoodIII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/BrentwoodIII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/brentwood-iii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>968795065707575932937702825526</PlanNumber><PlanName>Minerva House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1992</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,992 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+&#187; Office
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Minerva1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Minerva2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/minerva-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>630812561507754418824739042916</PlanNumber><PlanName>Pinewood IV House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1462</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,462 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Covered Porch
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//PinewoodIV1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/PinewoodIV2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/pinewood-iv-house-plans</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>739007130378939593353240308640</PlanNumber><PlanName>Sycamore House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2394</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,394 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Den/Study
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Sycamore1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Sycamore2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/sycamore-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>277876212291497184898510112033</PlanNumber><PlanName>Villager House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>945</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>0.0</Garage><Description>House Series:  945 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; Energy Star &amp;#038; Green Ready
+&#187; Dining Area
+&#187; Breakfast Bar
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Villager1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Villager2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/villager-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>195725404908739736704279448782</PlanNumber><PlanName>Villa Maria House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1512</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,512 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//VillaMaria1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/VillaMaria2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/villa-maria-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>502654070850573622788470656212</PlanNumber><PlanName>Glen Springs House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2554</BaseSqft><Baths>3</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,554
+Bedrooms: 4
+Bathrooms: 3.5
+Features Include:
+&#187; Den/Study
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Loft
+A special gabled porch draws attention to the front entrance while a porch in the back of the home offers a spot to grill &amp;#8211; come rain or shine. Growing families are sure to appreciate the second level. In addition to the master suite, there are three secondary bedrooms with walk-in closets and two full baths. A centrally located loft is an ideal spot for a game table. A computer could also be setup in the loft&amp;#8217;s closet.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//GlenSprings1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/GlenSprings2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/GlenSprings3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/glen-springs-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>261620521911598275246158637284</PlanNumber><PlanName>Prairie View House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>945</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">1</Bedrooms><Garage>0.0</Garage><Description>House Series:  945 Sq Ft
+Bedrooms: 1
+Bathrooms: 1.0
+Features Include:
+&#187; Open Floor Plan
+&#187; Varying Floor &amp;#038; Ceiling Elevations
+&#187; Palladian Windows
+&#187; Energy Star &amp;#038; Green Ready
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//PrairieView1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/PrairieView2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/prairie-view-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>439704307389986529979542618007</PlanNumber><PlanName>Geneva House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1560</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,560 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Geneva1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Geneva2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/geneva-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>875237216001674296016274351673</PlanNumber><PlanName>Fairacres House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1754</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,754 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Dormers and three pairs of columns lend a nostalgic touch to this home. Inside, ample storage makes it ideal for growing families or empty nesters with a lifetime of treasures. Snacks and packaged foods easily fit in the kitchen&amp;#8217;s corner pantry. The master bedroom offers two walk-in closets and shelves in the hall &amp;#8211; perfect for displaying collectibles. And there&amp;#8217;s plenty of room for holiday decorations and outgrown toys in the unfinished area upstairs. 
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Fairacres1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Fairacres2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Fairacres3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/fairacres-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>20124919945270383301702911713</PlanNumber><PlanName>Freedom I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1117</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,117 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//FreedomI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/FreedomI2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/freedom-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>846423606014252637339319584754</PlanNumber><PlanName>Trailblazer House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>556</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">1</Bedrooms><Garage>0.0</Garage><Description>House Series:  556 Sq Ft
+Bedrooms: 1
+Bathrooms: 1.0
+Features Include:
+&#187; Energy Star &amp;#038; Green Ready
+&#187; Flexible Design
+&#187; Multiple Uses
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Trailblazer1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Trailblazer2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/trailblazer-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>17537670471723358341821477945</PlanNumber><PlanName>Continental VI House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2280</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,280 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//ContinentalVI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/ContinentalVI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/ContinentalVI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/continental-vi-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>684231799766473297618911240759</PlanNumber><PlanName>Jefferson I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>3061</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  3,061 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+&#187; Sunroom
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//JeffersonI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/JeffersonI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/JeffersonI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/jefferson-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>255002109564066175725003404039</PlanNumber><PlanName>Ultima Plus TI House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1820</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,820
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Living Room
+Front living room could easily be converted to a private den or study with addition of french doors. Unique angled kitchen with family-size snack bar open to the family room.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//UltimaPlusTI1.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/ultima-plus-ti-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>491426940931670610842489915820</PlanNumber><PlanName>Walnut Hill IV House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1519</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,519 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Covered Porch
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//WalnutHillIV1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/WalnutHillIV2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/walnut-hill-iv-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>853872870424677506183975392221</PlanNumber><PlanName>Seaview House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1972</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,972 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Great Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Seaview1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Seaview2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/seaview-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>917047247089477762339102545267</PlanNumber><PlanName>Fairview House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2003</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,003
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Den/Study
+&#187; First Floor Master Bedroom
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+A gabled porch with a side entrance gives this 1 1/2 story home an interesting twist. Busy adults will relish stepping behind the French doors off the entry into the den&amp;#8217;s quiet solitude. When it&amp;#8217;s time to entertain, the 2-story great room is sure to dazzle &amp;#8211; with its fireplace, stacked windows, gracious staircase and expansive plant shelf. The second level offers a computer room for the children.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Fairview1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Fairview2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Fairview3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/fairview-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>96626478633661069870277878354</PlanNumber><PlanName>Westwood House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>4400</BaseSqft><Baths>3</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">5</Bedrooms><Garage>1.0</Garage><Description>House Series:  4,400 Sq Ft
+Bedrooms: 5
+Bathrooms: 3.5
+Features Include:
+&#187; Den/Study
+&#187; Extended 2nd Floor
+&#187; Great Room
+&#187; Breakfast Nook
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Westwood1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Westwood2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Westwood3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/westwood-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>152511980266835755375302725984</PlanNumber><PlanName>Chalco Pointe House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1583</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,583 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Arch-topped columns make this home&amp;#8217;s front entrance a pleasing focal point. Inside, a casual floor plan is sure to make guests feel right at home. Two low entertainment center in the great room provide room for the TV, VCR and stereo equipment, while natural light pours in through high windows. A long angled snack bar allows family and friends to grab a bite while watching television or to interact while food is being prepared.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//ChalcoPointe1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/ChalcoPointe2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/chalco-pointe-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>208956155511523472635557600245</PlanNumber><PlanName>Tidewater House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>3139</BaseSqft><Baths>4</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  3,139 Sq Ft
+Bedrooms: 4
+Bathrooms: 4.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Den/Study
+&#187; Laundry Room
+&#187; Integrated Garage
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Tidewater1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Tidewater2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/tidewater-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>610468884622979675371187880738</PlanNumber><PlanName>Edison II House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2747</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,747 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Family Room
+&#187; Sunroom
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//EdisonII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/EdisonII2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/EdisonII3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/edison-ii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>72737098392226406101027771596</PlanNumber><PlanName>Brookside House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2126</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,126 Sq Ft
+Unfinished: Adds 800 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Home Office
+&#187; Living Room
+Attractive gables anchor each end of this home. Its flexible floor plan accommodates different family lifestyles. A spacious home office could be turned into a garage for a third card or a workshop. Bedrooms 2 and 3 are comfortable childrens rooms. Joined, they become a gracious suite for an older relative. The upstairs bonus area could be used for an additional bedroom, hobby room or game room.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Brookside1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Brookside2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Brookside3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/brookside-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>17402202948147475166667123089</PlanNumber><PlanName>Cadet House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2197</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>2.0</Garage><Description>House Series:  2,197 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Two Car Garage
+&#187; Laundry Room
+&#187; Loft
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Cadet1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Cadet2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cadet-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>190007935272114194204896737990</PlanNumber><PlanName>Nova IX House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1022</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,022 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//NovaIX1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/NovaIX2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/nova-ix-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>260304558286150351830846557518</PlanNumber><PlanName>Easton House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1559</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,559 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Covered Porch
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Easton1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Easton2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/easton-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>695770580233969613268847431815</PlanNumber><PlanName>Sandstone House Plans</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2981</BaseSqft><Baths>3</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,981 Sq Ft
+Bedrooms: 4
+Bathrooms: 3.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Laundry Room
+&#187; Living Room
+&#187; Loft
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Sandstone1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Sandstone2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/sandstone-house-plans</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>165442899662280598039764150958</PlanNumber><PlanName>Providence House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2140</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,140 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Extended 2nd Floor
+&#187; Great Room
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+&#187; Integrated Garage
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Providence1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Providence2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/providence-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>46451847653168590481976760006</PlanNumber><PlanName>Walden IV House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1730</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,730 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//WaldenIV1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/WaldenIV2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/WaldenIV3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/walden-iv-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>119555310622591399731089936018</PlanNumber><PlanName>Richards House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2394</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,394 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Richards1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Richards2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/richards-house-plans</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>293582425592108401504553770669</PlanNumber><PlanName>Hillsdale House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2132</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,132
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Living Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Family Room
+A pair of double columns creates a pleasing approach to the front door. Just inside, a spacious entry provides a lovely spot to greet guests and see them off. A see-thru fireplace adds warmth to gatherings in the dining and living rooms. In the master suite, a compartmentalized bath allows two people to use different areas. With the washer and dryer near all the bedrooms, everyone can pitch in with the laundry. 
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Hillsdale1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Hillsdale2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Hillsdale3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/hillsdale-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>899427682879821562967081589863</PlanNumber><PlanName>Bloomfield House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1580</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,580 Sq Ft
+Unfinished: Adds 440 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Family Room
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; 440 Sq Ft Unfinished Storage
+A double gable, a shed dormer and a deep, welcoming porch gives this home its appealing appearance. An exceptionally sunny dining area leads to a private porch &amp;#8211; the perfect place to sip a cup of coffee and enjoy some fresh air. Bedroom 3&amp;#8242;s built-in desk is an ideal spot for doing homework &amp;#8211; or playing computer games. And with a bench just inside the garage, there&amp;#8217;s no excuse for not removing wet shoes.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Bloomfield1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Bloomfield2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Bloomfield3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/bloomfield-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>349408374628290785426039738466</PlanNumber><PlanName>Edgevale House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2594</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,594
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Den/Study
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+A covered side entrance is just one of the novel features of this  home. Inside, an open floor plan gives a sense of spaciousness and added flexibility. An angled snack bar and combined breakfast area/hearth room provides plenty of room for chicken&amp;#8217;s birthday parties or team get-togethers. Upstairs, a balcony offers a stunning view into the great room and a computer room is sure to be a popular spot.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Edgevale1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Edgevale2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Edgevale3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/edgevale-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>979077217219378462959750404130</PlanNumber><PlanName>Cadwell House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2025</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  2,025 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Family Room
+&#187; Breakfast Nook
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Cadwell1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Cadwell2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/cadwell-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>1177873138335227637932419921</PlanNumber><PlanName>Crestwood V House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1559</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,559 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Covered Porch
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CrestwoodV1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CrestwoodV2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/crestwood-v-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>654574321225211451896889881914</PlanNumber><PlanName>Keystone House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2168</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,168
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Laundry Room
+A trio of shuttered windows top a pleasing porch. Inside, guests are greeted by a 2-story entry with a sunlit plant shelf. In the dining room, a recessed hutch space keeps floor space free so that both leaves can be used in the table. Upstairs, the children will have plenty of room for work and play. Bedrooms 2 and 4 have built-in desks in special study areas and walk-in closets. Bedroom 3 has 2 closets.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Keystone1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Keystone2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Keystone3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/keystone-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>225296813913733471781583795070</PlanNumber><PlanName>Crestwood II House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1505</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,505 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CrestwoodII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CrestwoodII2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/crestwood-ii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>127890392709367962838901278333</PlanNumber><PlanName>Patriot I House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>929</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>1.0</Garage><Description>House Series:  929 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//PatriotI1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/PatriotI2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/PatriotI3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/patriot-i-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>5015595318633130722583884796</PlanNumber><PlanName>Ultima C21 House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>792</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">1</Bedrooms><Garage>1.0</Garage><Description>House Series:  792 Sq Ft
+Bedrooms: 1
+Bathrooms: 1.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Breakfast Nook
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//UltimaC211.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/UltimaC212.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/UltimaC213.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/ultima-c21-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>365697256039433447848003712673</PlanNumber><PlanName>Hamilton II House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2377</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,377 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//HamiltonII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/HamiltonII2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/HamiltonII3.jpg</ElevationImage><ElevationImage SequencePosition="4" ReferenceType="URL">http://zeman-construction.com/plans/HamiltonII4.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/hamilton-ii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>134380583003673507340319449345</PlanNumber><PlanName>Chesterbrook House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1817</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,817 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Chesterbrook1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Chesterbrook2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/chesterbrook-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>693468343552820718665502977757</PlanNumber><PlanName>Lakewood IV House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1276</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,276 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; Covered Porch
+&#187; First Floor Master Bedroom
+&#187; Integrated Garage
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//LakewoodIV1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/LakewoodIV2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/lakewood-iv-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>367556930972572823181250095127</PlanNumber><PlanName>Continental III House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2163</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,163 Sq. Ft.
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//ContinentalIII1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/ContinentalIII2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/ContinentalIII3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/continental-iii-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>175634962685537014492482498117</PlanNumber><PlanName>Palmyra House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1705</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,705 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Covered Porch
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Palmyra1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Palmyra2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/palmyra-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>790273819142621145954771755216</PlanNumber><PlanName>Bainbridge House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1840</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,840 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Extended 2nd Floor
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Bainbridge1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Bainbridge2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/bainbridge-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>133379361866035437052039060617</PlanNumber><PlanName>Fenwick House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1677</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,677 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Fenwick1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Fenwick2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/fenwick-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>244159923654733225686814056219</PlanNumber><PlanName>Carbondale House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2809</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,809 Sq Ft
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Integrated Garage
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Carbondale1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Carbondale2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Carbondale3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/carbondale-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>311480167702193636684914742315</PlanNumber><PlanName>Wildewood House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1987</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,987 Sq Ft
+Unfinished: Adds 703 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.5
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+Cross gables and multi-paned windows give this one-story it&amp;#8217;s charm. Friends and family will feel home in the open great room, kitchen and dining area. The fireplace spreads a sense of warmth throughout the area and two sets of triple windows bring in lots of natural light.  A sitting area in the spacious master bedroom provides a quiet spot to read. More than 700 square feet can be finished upstairs or left as storage space.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Wildewood1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Wildewood2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Wildewood3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/wildewood-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>532828747366222034764287439421</PlanNumber><PlanName>Craftsman Cottage House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>945</BaseSqft><Baths>1</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">2</Bedrooms><Garage>0.0</Garage><Description>House Series:  945 Sq Ft
+Bedrooms: 2
+Bathrooms: 1.0
+Features Include:
+&#187; Two Story Design
+&#187; Open Floor Plan
+&#187; Palladian Windows
+&#187; Energy Star &amp;#038; Green Ready
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CraftsmanCottage1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CraftsmanCottage2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/craftsman-cottage-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>414873185523144514349436871511</PlanNumber><PlanName>Janbrook House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>2252</BaseSqft><Baths>2</Baths><HalfBaths>1</HalfBaths><Bedrooms MasterBedLocation="Down">4</Bedrooms><Garage>1.0</Garage><Description>House Series:  2,252
+Bedrooms: 4
+Bathrooms: 2.5
+Features Include:
+&#187; Covered Porch
+&#187; Breakfast Nook
+&#187; Great Room
+&#187; Integrated Garage
+&#187; Laundry Room
+A pair of columns neatly frames the entrance of this charming asymmetrical home. The roomy dining room with built-in hutch provides the perfect setting for festive holiday dinners with all the trimmings. A pass-thru between the breakfast area and great room offers a handy spot to line up refreshments. And pulling up a chair for extra guests for everyday meals won&amp;#8217;t be a problem in the long breakfast area.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Janbrook1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Janbrook2.jpg</ElevationImage><ElevationImage SequencePosition="3" ReferenceType="URL">http://zeman-construction.com/plans/Janbrook3.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/janbrook-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>159303393289622293019047178524</PlanNumber><PlanName>Bishop House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1617</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,617 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Office
+&#187; Laundry Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Bishop1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Bishop2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/bishop-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>974988679762480445701945088848</PlanNumber><PlanName>Wallingford House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1818</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>1.0</Garage><Description>House Series:  1,818 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Laundry Room
+&#187; Great Room
+&#187; Integrated Garage
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Wallingford1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Wallingford2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/wallingford-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>704461974023452255631639612928</PlanNumber><PlanName>Edgemont House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1808</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,808 Sq Ft
+Bedrooms: 3
+Bathrooms: 2.0
+Features Include:
+&#187; First Floor Master Bedroom
+&#187; Breakfast Nook
+&#187; Family Room
+&#187; Laundry Room
+&#187; Living Room
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//Edgemont1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/Edgemont2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/edgemont-house-plan</PlanWebsite></Plan><Plan Type="SingleFamily"><PlanNumber>775942521387886212736776496993</PlanNumber><PlanName>Crestwood IV House Plan</PlanName><PlanNotAvailable>0</PlanNotAvailable><PlanTypeName>Single Family</PlanTypeName><BasePrice>0.00</BasePrice><BaseSqft>1497</BaseSqft><Baths>2</Baths><HalfBaths>0</HalfBaths><Bedrooms MasterBedLocation="Down">3</Bedrooms><Garage>0.0</Garage><Description>House Series:  1,497 Sq. Ft.
+Bedrooms: 3
+Bathrooms: 2
+Features Include:
+&#187; Covered Porch
+&#187; Living Room
+Open entry views add to the feeling of spaciousness. You&amp;#8217;ll enjoy the accommodating pantry &amp;amp; abundant work space in the peninsula kitchen. For the master bedroom, you have two closets plus a bath with separate tub and shower.
+Call us today at (434) 987-1349</Description><PlanImages><ElevationImage SequencePosition="1" ReferenceType="URL">http://zeman-construction.com/plans//CrestwoodIV1.jpg</ElevationImage><ElevationImage SequencePosition="2" ReferenceType="URL">http://zeman-construction.com/plans/CrestwoodIV2.jpg</ElevationImage></PlanImages><PlanWebsite>http://zeman-construction.com/house-plans/crestwood-iv</PlanWebsite></Plan></Subdivision></Builder></Corporation></Builders>

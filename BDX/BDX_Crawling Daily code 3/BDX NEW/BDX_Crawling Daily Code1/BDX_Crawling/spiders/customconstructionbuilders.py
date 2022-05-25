@@ -64,18 +64,18 @@ class vtshomeshomesSpider(scrapy.Spider):
     def plan(self, response):
 
         divs = response.xpath("//*[contains(text(),'Story')]")
-        for div in divs:
+
+        divs1 = ['The Kendall', 'The Bancroft', 'The Winslow', 'The Freemont', 'The Clifton', 'The Oakdale', 'The Medford', 'The Ashton', 'The Kimball']
+        for xx,div in enumerate(divs):
 
             try:
-                # price = div.xpath('.//div/div[2]/h3/text()').extract_first('')
-                # price = price.replace(",", "")
-                # price = re.findall(r"(\d+)", price)[0]
                 price = 0
             except Exception as e:
                 price = 0
 
             try:
-                PlanName = div.xpath('./../.././../../../../../preceding-sibling::section//h1/text()').get()
+                PlanName = divs1[xx]
+                print("plan name is ",PlanName)
             except Exception as e:
                 PlanName = ''
                 print(e)
@@ -193,6 +193,8 @@ class vtshomeshomesSpider(scrapy.Spider):
                 PlanWebsite = response.url
             except Exception as e:
                 print(e)
+
+            Type = 'SingleFamily'
 
                 # ----------------------- Don't change anything here --------------
             unique = str(PlanNumber) + str(SubdivisionNumber)  # < -------- Changes here

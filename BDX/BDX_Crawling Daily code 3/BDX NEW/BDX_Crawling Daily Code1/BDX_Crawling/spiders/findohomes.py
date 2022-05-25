@@ -142,6 +142,7 @@ class bellavistacustomehomesSpider(scrapy.Spider):
             try:
                 Description = "".join(response.xpath(".//../..//div[contains(@class,'dmNewParagraph')][2]/p/span/text()").extract()).strip().encode('ascii', 'ignore')
                 # print(Description)
+                Description = Description.encode('ascii', 'ignore')
             except Exception as e:
                 Description = ''
 
@@ -194,6 +195,8 @@ class bellavistacustomehomesSpider(scrapy.Spider):
         links = response.xpath("//span[contains(text(),'Explore')]/../@href").extract()
         for link in links:
             link = 'https://www.findohomes.com'+ link
+            print(link)
+
             yield scrapy.FormRequest(url=link, callback=self.communities,dont_filter="True" , headers=self.headers)
 
     def communities(self, response):
@@ -209,7 +212,6 @@ class bellavistacustomehomesSpider(scrapy.Spider):
 
         contactTmp = response.xpath('//div[@class="dmNewParagraph"]/p[2]/span/text()').extract_first('')
 
-
         try:
             desc = "".join(response.xpath('//div[@class="dmNewParagraph"]/p/span/text()').extract())
             desc = desc.split(contactTmp)[1]
@@ -219,7 +221,7 @@ class bellavistacustomehomesSpider(scrapy.Spider):
 
         try:
             image = response.xpath('//li[@animation="fadeInUp"]/img/@src').extract()
-            image - "|".join(image)
+            image = "|".join(image)
         except Exception as e:
             print(e)
             image = ""
@@ -350,7 +352,7 @@ class bellavistacustomehomesSpider(scrapy.Spider):
             item['SpecBedrooms'] = SpecBedrooms
             item['MasterBedLocation'] = 0
             item['SpecGarage'] = garage
-            item['SpecDescription'] = 0
+            item['SpecDescription'] = ''
             item['SpecElevationImage'] = SpecElevationImage
             item['SpecWebsite'] = response.url
             yield item

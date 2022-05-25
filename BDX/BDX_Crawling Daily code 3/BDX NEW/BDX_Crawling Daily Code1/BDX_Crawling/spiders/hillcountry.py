@@ -38,7 +38,6 @@ class HillCountrySpider(scrapy.Spider):
         item['SubImage'] = 'https://www.hillcountryclassics.com/images/galleries/home-top/william-travis-1438-cropped.jpg|https://www.hillcountryclassics.com/images/galleries/home-top/american-flag.jpg|https://www.hillcountryclassics.com/images/galleries/Thurman/AA17-65_Thurman-43_800x533.jpg|https://www.hillcountryclassics.com/images/galleries/home-top/AA_17-61_Powell_13_Edit.jpg|https://www.hillcountryclassics.com/images/galleries/home-top/Squires_8.jpg'
         item['SubWebsite'] = response.url
         item['AmenityType'] = ''
-
         yield item
         plan_link = 'https://www.hillcountryclassics.com/plans'
         yield scrapy.FormRequest(url=plan_link, callback=self.planurl, dont_filter=True,
@@ -146,13 +145,6 @@ class HillCountrySpider(scrapy.Spider):
             print("BaseSQFT: ", e)
 
         try:
-            desc = response.xpath('//div[@class="tm-article-content uk-margin"]/p[4]/text()').get()
-        except Exception as e:
-            print(e
-                  )
-            desc = ''
-
-        try:
             ElevationImages = []
             ElevationImage = response.xpath('//*[@class="tm-article-content uk-margin"]/p[3]/img/@src').extract()
             for ElevationIma in ElevationImage:
@@ -182,7 +174,7 @@ class HillCountrySpider(scrapy.Spider):
         item['Bedrooms'] = Bedrooms
         item['Garage'] = Garage
         item[
-            'Description'] = desc
+            'Description'] = "Hill Country Classics Custom Homes has a large selection of floor plans ranging from as small as 600 square feet, to well over 2,500 square feet. Should you have ideas or plans of your own, our staff designer can help you put your ideas on paper. HCC will work to make your ideas function with the most efficient use of space and design.You can view floor plans for each of our homes by following the links below. Many of the homes also have alternate floor plans featuring custom designs and revisions."
         item['ElevationImage'] = ElevationImages
         item['PlanWebsite'] = response.url
         yield item

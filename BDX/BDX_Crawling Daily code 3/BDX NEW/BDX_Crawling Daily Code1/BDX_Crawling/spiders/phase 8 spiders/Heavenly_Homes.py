@@ -181,7 +181,7 @@ class HeavenlyHomesSpider(scrapy.Spider):
         yield item
         #
 
-#
-#
-# from scrapy.cmdline import execute
-# execute("scrapy crawl Heavenly_Homes".split())
+if __name__ == '__main__':
+
+    from scrapy.cmdline import execute
+    execute("scrapy crawl Heavenly_Homes".split())

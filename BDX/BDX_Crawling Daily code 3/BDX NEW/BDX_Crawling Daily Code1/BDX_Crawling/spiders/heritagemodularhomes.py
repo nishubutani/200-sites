@@ -65,8 +65,6 @@ class ImagineHomesSpider(scrapy.Spider):
             pass
         
     def parse3(self, response):
-
-
         try:
             PlanName = response.xpath('//h1/text()').extract_first('')
             print(PlanName)
